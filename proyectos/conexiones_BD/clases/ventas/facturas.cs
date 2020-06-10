@@ -582,7 +582,6 @@ namespace conexiones_BD.clases.ventas
                         where v.num_factura = vf.numero_factura and vf.idcliente = c.idcliente
                         and v.fecha>='" + fech + @" 00:00:00' and v.fecha<='" + fech + @" 23:59:59' and v.idsucursal='" + idsu + @"'
                         and v.anulacion = 1 order by vf.fecha_expedicion desc
-                        ;
                         ; ";
             conexiones_BD.operaciones oOperacion = new conexiones_BD.operaciones();
             try

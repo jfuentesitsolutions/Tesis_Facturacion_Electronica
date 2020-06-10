@@ -43,13 +43,6 @@
             this.txtNumFact = new System.Windows.Forms.NumericUpDown();
             this.txtSerie = new System.Windows.Forms.TextBox();
             this.tabla_clientes = new System.Windows.Forms.DataGridView();
-            this.nom = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.apellid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cod = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dire = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gene = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtBuscarCliente = new System.Windows.Forms.TextBox();
             this.btnActualizarInformación = new System.Windows.Forms.PictureBox();
             this.listaClientes = new System.Windows.Forms.ComboBox();
@@ -135,6 +128,14 @@
             this.progreso = new System.Windows.Forms.ToolStripProgressBar();
             this.relog = new System.Windows.Forms.Timer(this.components);
             this.guarda_xml = new System.Windows.Forms.SaveFileDialog();
+            this.nom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cod = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dire = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gene = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelInferio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtNumFact)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabla_clientes)).BeginInit();
@@ -220,7 +221,8 @@
             this.id,
             this.cod,
             this.dire,
-            this.gene});
+            this.gene,
+            this.Column25});
             this.tabla_clientes.Location = new System.Drawing.Point(149, 29);
             this.tabla_clientes.MultiSelect = false;
             this.tabla_clientes.Name = "tabla_clientes";
@@ -231,62 +233,6 @@
             this.tabla_clientes.Visible = false;
             this.tabla_clientes.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tabla_clientes_KeyDown);
             this.tabla_clientes.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tabla_clientes_KeyUp);
-            // 
-            // nom
-            // 
-            this.nom.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nom.DataPropertyName = "nombre";
-            this.nom.HeaderText = "Nombre del cliente";
-            this.nom.Name = "nom";
-            this.nom.ReadOnly = true;
-            // 
-            // nombres
-            // 
-            this.nombres.DataPropertyName = "nombre_cliente";
-            this.nombres.HeaderText = "nom";
-            this.nombres.Name = "nombres";
-            this.nombres.ReadOnly = true;
-            this.nombres.Visible = false;
-            // 
-            // apellid
-            // 
-            this.apellid.DataPropertyName = "apellidos_cliente";
-            this.apellid.HeaderText = "apellidos";
-            this.apellid.Name = "apellid";
-            this.apellid.ReadOnly = true;
-            this.apellid.Visible = false;
-            // 
-            // id
-            // 
-            this.id.DataPropertyName = "idcliente";
-            this.id.HeaderText = "idcli";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Visible = false;
-            // 
-            // cod
-            // 
-            this.cod.DataPropertyName = "cod_cliente";
-            this.cod.HeaderText = "codigo";
-            this.cod.Name = "cod";
-            this.cod.ReadOnly = true;
-            this.cod.Visible = false;
-            // 
-            // dire
-            // 
-            this.dire.DataPropertyName = "direccion";
-            this.dire.HeaderText = "direccion";
-            this.dire.Name = "dire";
-            this.dire.ReadOnly = true;
-            this.dire.Visible = false;
-            // 
-            // gene
-            // 
-            this.gene.DataPropertyName = "genero";
-            this.gene.HeaderText = "genero";
-            this.gene.Name = "gene";
-            this.gene.ReadOnly = true;
-            this.gene.Visible = false;
             // 
             // txtBuscarCliente
             // 
@@ -1199,6 +1145,69 @@
             this.relog.Interval = 1000;
             this.relog.Tick += new System.EventHandler(this.relog_Tick);
             // 
+            // nom
+            // 
+            this.nom.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nom.DataPropertyName = "nombre";
+            this.nom.HeaderText = "Nombre del cliente";
+            this.nom.Name = "nom";
+            this.nom.ReadOnly = true;
+            // 
+            // nombres
+            // 
+            this.nombres.DataPropertyName = "nombre_cliente";
+            this.nombres.HeaderText = "nom";
+            this.nombres.Name = "nombres";
+            this.nombres.ReadOnly = true;
+            this.nombres.Visible = false;
+            // 
+            // apellid
+            // 
+            this.apellid.DataPropertyName = "apellidos_cliente";
+            this.apellid.HeaderText = "apellidos";
+            this.apellid.Name = "apellid";
+            this.apellid.ReadOnly = true;
+            this.apellid.Visible = false;
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "idcliente";
+            this.id.HeaderText = "idcli";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
+            // 
+            // cod
+            // 
+            this.cod.DataPropertyName = "cod_cliente";
+            this.cod.HeaderText = "codigo";
+            this.cod.Name = "cod";
+            this.cod.ReadOnly = true;
+            this.cod.Visible = false;
+            // 
+            // dire
+            // 
+            this.dire.DataPropertyName = "direccion";
+            this.dire.HeaderText = "direccion";
+            this.dire.Name = "dire";
+            this.dire.ReadOnly = true;
+            this.dire.Visible = false;
+            // 
+            // gene
+            // 
+            this.gene.DataPropertyName = "genero";
+            this.gene.HeaderText = "genero";
+            this.gene.Name = "gene";
+            this.gene.ReadOnly = true;
+            this.gene.Visible = false;
+            // 
+            // Column25
+            // 
+            this.Column25.DataPropertyName = "correo";
+            this.Column25.HeaderText = "correo";
+            this.Column25.Name = "Column25";
+            this.Column25.ReadOnly = true;
+            // 
             // venta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -1310,13 +1319,6 @@
         private System.Windows.Forms.PictureBox btnActualizarInformación;
         private System.Windows.Forms.TextBox txtBuscarCliente;
         private System.Windows.Forms.DataGridView tabla_clientes;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nom;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombres;
-        private System.Windows.Forms.DataGridViewTextBoxColumn apellid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cod;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dire;
-        private System.Windows.Forms.DataGridViewTextBoxColumn gene;
         private System.Windows.Forms.PictureBox btnActualizar_Pro;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
@@ -1341,5 +1343,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column24;
         private System.Windows.Forms.NumericUpDown txtNumFact;
         private System.Windows.Forms.SaveFileDialog guarda_xml;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nom;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombres;
+        private System.Windows.Forms.DataGridViewTextBoxColumn apellid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cod;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dire;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gene;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column25;
     }
 }

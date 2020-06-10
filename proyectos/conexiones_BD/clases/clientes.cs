@@ -195,9 +195,9 @@ namespace conexiones_BD.clases
             String Consulta;
             Consulta = @"select concat(e.nombre_cliente,' ', e.apellidos_cliente) as nombre, 
                         e.nombre_cliente, e.apellidos_cliente, e.idcliente, e.cod_cliente, e.direccion,
-                        e.genero
+                        e.genero, e.correo
                         from clientes e where e.estado=1
-                        ; ";
+                        ;";
             conexiones_BD.operaciones oOperacion = new conexiones_BD.operaciones();
             try
             {
