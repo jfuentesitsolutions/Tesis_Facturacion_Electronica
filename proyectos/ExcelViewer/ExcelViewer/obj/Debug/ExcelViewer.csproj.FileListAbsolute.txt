@@ -34,3 +34,9 @@ C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\proyectos\ExcelViewer
 C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\proyectos\ExcelViewer\ExcelViewer\obj\Debug\ExcelViewer.dll
 C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\proyectos\ExcelViewer\ExcelViewer\obj\Debug\ExcelViewer.pdb
 C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\proyectos\ExcelViewer\ExcelViewer\obj\Debug\ExcelViewer.csprojAssemblyReference.cache
+L:\Tesis_Facturacion\Tesis_Facturacion_Electronica\proyectos\ExcelViewer\ExcelViewer\bin\Debug\ExcelViewer.dll
+L:\Tesis_Facturacion\Tesis_Facturacion_Electronica\proyectos\ExcelViewer\ExcelViewer\bin\Debug\ExcelViewer.pdb
+L:\Tesis_Facturacion\Tesis_Facturacion_Electronica\proyectos\ExcelViewer\ExcelViewer\obj\Debug\ExcelViewer.csprojAssemblyReference.cache
+L:\Tesis_Facturacion\Tesis_Facturacion_Electronica\proyectos\ExcelViewer\ExcelViewer\obj\Debug\ExcelViewer.csproj.CoreCompileInputs.cache
+L:\Tesis_Facturacion\Tesis_Facturacion_Electronica\proyectos\ExcelViewer\ExcelViewer\obj\Debug\ExcelViewer.dll
+L:\Tesis_Facturacion\Tesis_Facturacion_Electronica\proyectos\ExcelViewer\ExcelViewer\obj\Debug\ExcelViewer.pdb

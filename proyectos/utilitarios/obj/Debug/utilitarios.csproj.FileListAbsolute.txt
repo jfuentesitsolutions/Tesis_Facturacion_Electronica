@@ -84,3 +84,11 @@ C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\proyectos\utilitarios
 C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\proyectos\utilitarios\obj\Debug\utilitarios.csproj.CoreCompileInputs.cache
 C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\proyectos\utilitarios\obj\Debug\utilitarios.dll
 C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\proyectos\utilitarios\obj\Debug\utilitarios.pdb
+L:\Tesis_Facturacion\Tesis_Facturacion_Electronica\proyectos\utilitarios\bin\Debug\utilitarios.dll
+L:\Tesis_Facturacion\Tesis_Facturacion_Electronica\proyectos\utilitarios\bin\Debug\utilitarios.pdb
+L:\Tesis_Facturacion\Tesis_Facturacion_Electronica\proyectos\utilitarios\obj\Debug\utilitarios.csprojAssemblyReference.cache
+L:\Tesis_Facturacion\Tesis_Facturacion_Electronica\proyectos\utilitarios\obj\Debug\utilitarios.barra_progreso.resources
+L:\Tesis_Facturacion\Tesis_Facturacion_Electronica\proyectos\utilitarios\obj\Debug\utilitarios.csproj.GenerateResource.cache
+L:\Tesis_Facturacion\Tesis_Facturacion_Electronica\proyectos\utilitarios\obj\Debug\utilitarios.csproj.CoreCompileInputs.cache
+L:\Tesis_Facturacion\Tesis_Facturacion_Electronica\proyectos\utilitarios\obj\Debug\utilitarios.dll
+L:\Tesis_Facturacion\Tesis_Facturacion_Electronica\proyectos\utilitarios\obj\Debug\utilitarios.pdb

@@ -56,3 +56,9 @@ C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\modulo_principal\gadg
 C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\modulo_principal\gadgets\obj\Debug\gadgets.csproj.CoreCompileInputs.cache
 C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\modulo_principal\gadgets\obj\Debug\gadgets.dll
 C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\modulo_principal\gadgets\obj\Debug\gadgets.pdb
+L:\Tesis_Facturacion\Tesis_Facturacion_Electronica\modulo_principal\gadgets\bin\Debug\gadgets.dll
+L:\Tesis_Facturacion\Tesis_Facturacion_Electronica\modulo_principal\gadgets\bin\Debug\gadgets.pdb
+L:\Tesis_Facturacion\Tesis_Facturacion_Electronica\modulo_principal\gadgets\obj\Debug\gadgets.csprojAssemblyReference.cache
+L:\Tesis_Facturacion\Tesis_Facturacion_Electronica\modulo_principal\gadgets\obj\Debug\gadgets.csproj.CoreCompileInputs.cache
+L:\Tesis_Facturacion\Tesis_Facturacion_Electronica\modulo_principal\gadgets\obj\Debug\gadgets.dll
+L:\Tesis_Facturacion\Tesis_Facturacion_Electronica\modulo_principal\gadgets\obj\Debug\gadgets.pdb

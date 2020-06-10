@@ -180,3 +180,17 @@ C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\proyectos\conexiones_
 C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\proyectos\conexiones_BD\obj\Debug\conexiones_BD.csproj.CopyComplete
 C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\proyectos\conexiones_BD\obj\Debug\conexiones_BD.dll
 C:\Users\Mario\Documents\GitHub\tesis_facturacion\proyecto\proyectos\conexiones_BD\obj\Debug\conexiones_BD.pdb
+L:\Tesis_Facturacion\Tesis_Facturacion_Electronica\proyectos\conexiones_BD\bin\Debug\conexiones_BD.dll
+L:\Tesis_Facturacion\Tesis_Facturacion_Electronica\proyectos\conexiones_BD\bin\Debug\conexiones_BD.pdb
+L:\Tesis_Facturacion\Tesis_Facturacion_Electronica\proyectos\conexiones_BD\bin\Debug\LibPrintTicket.dll
+L:\Tesis_Facturacion\Tesis_Facturacion_Electronica\proyectos\conexiones_BD\bin\Debug\MySql.Data.dll
+L:\Tesis_Facturacion\Tesis_Facturacion_Electronica\proyectos\conexiones_BD\bin\Debug\MySqlBackup.dll
+L:\Tesis_Facturacion\Tesis_Facturacion_Electronica\proyectos\conexiones_BD\bin\Debug\sessionManager.dll
+L:\Tesis_Facturacion\Tesis_Facturacion_Electronica\proyectos\conexiones_BD\bin\Debug\utilitarios.dll
+L:\Tesis_Facturacion\Tesis_Facturacion_Electronica\proyectos\conexiones_BD\bin\Debug\sessionManager.pdb
+L:\Tesis_Facturacion\Tesis_Facturacion_Electronica\proyectos\conexiones_BD\bin\Debug\utilitarios.pdb
+L:\Tesis_Facturacion\Tesis_Facturacion_Electronica\proyectos\conexiones_BD\obj\Debug\conexiones_BD.csprojAssemblyReference.cache
+L:\Tesis_Facturacion\Tesis_Facturacion_Electronica\proyectos\conexiones_BD\obj\Debug\conexiones_BD.csproj.CoreCompileInputs.cache
+L:\Tesis_Facturacion\Tesis_Facturacion_Electronica\proyectos\conexiones_BD\obj\Debug\conexiones_BD.csproj.CopyComplete
+L:\Tesis_Facturacion\Tesis_Facturacion_Electronica\proyectos\conexiones_BD\obj\Debug\conexiones_BD.dll
+L:\Tesis_Facturacion\Tesis_Facturacion_Electronica\proyectos\conexiones_BD\obj\Debug\conexiones_BD.pdb
