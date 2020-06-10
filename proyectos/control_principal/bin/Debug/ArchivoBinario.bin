@@ -1,0 +1,236 @@
+﻿INSERT INTO productos (cod_producto,nom_producto,fecha_ingreso,idcategoria,idmarca) VALUES('1989','PREUA','2019-01-11 23:44:04','1','1');
+UPDATE proveedores_productos SET idproveedor='1', idproducto='3795', UPDATE proveedores_productos SET idproveedor='1', idproducto='3795' WHERE ='';
+INSERT INTO productos (cod_producto,nom_producto,fecha_ingreso,idcategoria,idmarca) VALUES('1989','PRUEBA','2019-01-11 23:48:24','1','1');
+INSERT INTO proveedores_productos (idproveedor,idproducto) VALUES('1','3796');
+INSERT INTO productos (nom_producto,fecha_ingreso,idcategoria,idmarca) VALUES('PRUEBA','2019-03-28 14:52:40','2','1');
+INSERT INTO proveedores_productos (idproveedor,idproducto) VALUES('21','4124');
+INSERT INTO productos (nom_producto,fecha_ingreso,idcategoria,idmarca) VALUES('PRUEBA','2019-03-28 15:06:00','2','1');
+INSERT INTO productos (nom_producto,fecha_ingreso,idcategoria,idmarca) VALUES('PRUEBA','2019-03-28 15:26:14','2','1');
+INSERT INTO proveedores_productos (idproveedor,idproducto) VALUES('22','4126');
+INSERT INTO productos (nom_producto,fecha_ingreso,idcategoria,idmarca) VALUES('PRUEBA2','2019-03-29 10:28:03','1','2');
+INSERT INTO proveedores_productos (idproveedor,idproducto) VALUES('22','4127');
+INSERT INTO productos (nom_producto,fecha_ingreso,idcategoria,idmarca) VALUES('PRUEBA3','2019-03-29 10:35:54','2','1');
+INSERT INTO proveedores_productos (idproveedor,idproducto) VALUES('21','4128');
+INSERT INTO productos (nom_producto,fecha_ingreso,idcategoria,idmarca) VALUES('PRUEBA4','2019-03-29 10:46:10','2','1');
+INSERT INTO proveedores_productos (idproveedor,idproducto) VALUES('20','4129');
+INSERT INTO productos (nom_producto,fecha_ingreso,idcategoria,idmarca) VALUES('PRUEBA5','2019-03-29 10:49:52','2','1');
+INSERT INTO proveedores_productos (idproveedor,idproducto) VALUES('21','4130');
+INSERT INTO productos (nom_producto,fecha_ingreso,idcategoria,idmarca) VALUES('PRUEBA6','2019-03-29 10:59:45','1','1');
+INSERT INTO proveedores_productos (idproveedor,idproducto) VALUES('22','4131');
+INSERT INTO productos (nom_producto,fecha_ingreso,idcategoria,idmarca) VALUES('PRUEBA4','2019-03-29 11:02:58','1','2');
+INSERT INTO proveedores_productos (idproveedor,idproducto) VALUES('22','4132');
+INSERT INTO productos (nom_producto,fecha_ingreso,idcategoria,idmarca) VALUES('PRUEBA4','2019-03-29 11:05:41','2','1');
+INSERT INTO proveedores_productos (idproveedor,idproducto) VALUES('22','4133');
+INSERT INTO productos (nom_producto,fecha_ingreso,idcategoria,idmarca) VALUES('DFSD','2019-03-29 11:08:51','2','1');
+INSERT INTO proveedores_productos (idproveedor,idproducto) VALUES('21','4134');
+INSERT INTO productos (nom_producto,fecha_ingreso,idcategoria,idmarca) VALUES('FFF','2019-03-29 11:11:07','1','2');
+INSERT INTO proveedores_productos (idproveedor,idproducto) VALUES('21','4135');
+UPDATE productos SET nom_producto='COCA COLA LATA PRUEBA
+', fecha_ingreso='2018-09-08 10:01:04', idcategoria='60', idmarca='53', UPDATE productos SET nom_producto='COCA COLA LATA PRUEBA
+', fecha_ingreso='2018-09-08 10:01:04', idcategoria='60', idmarca='53' WHERE idproducto='3684';
+UPDATE productos SET nom_producto='COCA COLA LATA
+', fecha_ingreso='2018-09-08 10:01:04', idcategoria='60', idmarca='53', UPDATE productos SET nom_producto='COCA COLA LATA
+', fecha_ingreso='2018-09-08 10:01:04', idcategoria='60', idmarca='53' WHERE idproducto='3684';
+UPDATE productos SET nom_producto='FFF PRUEBA 2', fecha_ingreso='2019-03-29 11:11:07', idcategoria='1', idmarca='2', UPDATE productos SET nom_producto='FFF PRUEBA 2', fecha_ingreso='2019-03-29 11:11:07', idcategoria='1', idmarca='2' WHERE idproducto='4135';
+INSERT INTO productos (nom_producto,fecha_ingreso,idcategoria,idmarca) VALUES('ESTA ES UNA ORUEBA','2019-04-06 19:00:10','60','53');
+INSERT INTO proveedores_productos (idproveedor,idproducto) VALUES('2','4136');
+INSERT INTO productos (nom_producto,fecha_ingreso,idcategoria,idmarca) VALUES('CELULAR CHINO','2019-04-07 14:23:47','60','53');
+INSERT INTO proveedores_productos (idproveedor,idproducto) VALUES('2','4137');
+UPDATE productos SET nom_producto='FFF PRUEBA 2', fecha_ingreso='2019-03-29 11:11:07', idcategoria='1', idmarca='2', UPDATE productos SET nom_producto='FFF PRUEBA 2', fecha_ingreso='2019-03-29 11:11:07', idcategoria='1', idmarca='2' WHERE idproducto='4135';
+UPDATE productos SET nom_producto='FFF PRUEBA 2', fecha_ingreso='2019-03-29 11:11:07', idcategoria='1', idmarca='2', UPDATE productos SET nom_producto='FFF PRUEBA 2', fecha_ingreso='2019-03-29 11:11:07', idcategoria='1', idmarca='2' WHERE idproducto='4135';
+UPDATE productos SET nom_producto='CELULAR CHINO', fecha_ingreso='2019-04-07 14:23:47', idcategoria='5', idmarca='369', UPDATE productos SET nom_producto='CELULAR CHINO', fecha_ingreso='2019-04-07 14:23:47', idcategoria='5', idmarca='369' WHERE idproducto='4137';
+INSERT INTO productos (nom_producto,fecha_ingreso,idcategoria,idmarca) VALUES('PANTENE SHAMPOO CON ACONDICIONADOR RIZOS DEFINIDOS ','2019-04-11 08:53:23','60','53');
+INSERT INTO proveedores_productos (idproveedor,idproducto) VALUES('2','4187');
+UPDATE productos SET nom_producto='HEAD SHOULDERS RELAX CONTROL COMEZON 
+', fecha_ingreso='2018-09-08 10:09:13', idcategoria='60', idmarca='53', UPDATE productos SET nom_producto='HEAD SHOULDERS RELAX CONTROL COMEZON 
+', fecha_ingreso='2018-09-08 10:09:13', idcategoria='60', idmarca='53' WHERE idproducto='3686';
+UPDATE productos SET nom_producto='HEADSHOULDERS MANZANA FRESH
+', fecha_ingreso='2018-07-29 10:17:05', idcategoria='60', idmarca='53', UPDATE productos SET nom_producto='HEADSHOULDERS MANZANA FRESH
+', fecha_ingreso='2018-07-29 10:17:05', idcategoria='60', idmarca='53' WHERE idproducto='3517';
+UPDATE productos SET nom_producto='PANTENE CREMA PARA PEINAR RIZOS DEFINIDOS 
+', fecha_ingreso='2018-07-19 06:06:21', idcategoria='60', idmarca='53', UPDATE productos SET nom_producto='PANTENE CREMA PARA PEINAR RIZOS DEFINIDOS 
+', fecha_ingreso='2018-07-19 06:06:21', idcategoria='60', idmarca='53' WHERE idproducto='3459';
+UPDATE productos SET nom_producto='SOPA LAKI VASO VARIEDAD 75G/2.65OZ', fecha_ingreso='2018-06-26 09:44:56', idcategoria='60', idmarca='53', UPDATE productos SET nom_producto='SOPA LAKI VASO VARIEDAD 75G/2.65OZ', fecha_ingreso='2018-06-26 09:44:56', idcategoria='60', idmarca='53' WHERE idproducto='3317';
+UPDATE productos SET nom_producto='SOPA MARUCHAN VASO VARIEDAD 64G', fecha_ingreso='2019-04-11 09:17:40', idcategoria='27', idmarca='213', UPDATE productos SET nom_producto='SOPA MARUCHAN VASO VARIEDAD 64G', fecha_ingreso='2019-04-11 09:17:40', idcategoria='27', idmarca='213' WHERE idproducto='1795';
+UPDATE productos SET nom_producto='SOPA LAKY SOBRE VARIEDAD 85G', fecha_ingreso='2019-04-11 09:21:39', idcategoria='27', idmarca='148', UPDATE productos SET nom_producto='SOPA LAKY SOBRE VARIEDAD 85G', fecha_ingreso='2019-04-11 09:21:39', idcategoria='27', idmarca='148' WHERE idproducto='1781';
+UPDATE productos SET nom_producto='SOPA MARUCHAN SOBRE VARIEDAD 85G', fecha_ingreso='2019-04-11 09:27:28', idcategoria='27', idmarca='213', UPDATE productos SET nom_producto='SOPA MARUCHAN SOBRE VARIEDAD 85G', fecha_ingreso='2019-04-11 09:27:28', idcategoria='27', idmarca='213' WHERE idproducto='1790';
+UPDATE productos SET nom_producto='AXE COLLISION', fecha_ingreso='2019-01-03 08:37:14', idcategoria='60', idmarca='53', UPDATE productos SET nom_producto='AXE COLLISION', fecha_ingreso='2019-01-03 08:37:14', idcategoria='60', idmarca='53' WHERE idproducto='3864';
+UPDATE productos SET nom_producto='CONCENTRADO DOGUI CACHORO
+
+', fecha_ingreso='2019-01-11 11:58:55', idcategoria='60', idmarca='53', UPDATE productos SET nom_producto='CONCENTRADO DOGUI CACHORO
+
+', fecha_ingreso='2019-01-11 11:58:55', idcategoria='60', idmarca='53' WHERE idproducto='3924';
+UPDATE productos SET nom_producto='BOLSA PLASTICA DE 1 LIBRA 5X8
+', fecha_ingreso='2019-03-16 11:04:51', idcategoria='40', idmarca='503', UPDATE productos SET nom_producto='BOLSA PLASTICA DE 1 LIBRA 5X8
+', fecha_ingreso='2019-03-16 11:04:51', idcategoria='40', idmarca='503' WHERE idproducto='204';
+UPDATE productos SET nom_producto='BOLSA PLASTICA DE 2 LIBRAS 6X10', fecha_ingreso='2018-07-16 02:26:37', idcategoria='40', idmarca='503', UPDATE productos SET nom_producto='BOLSA PLASTICA DE 2 LIBRAS 6X10', fecha_ingreso='2018-07-16 02:26:37', idcategoria='40', idmarca='503' WHERE idproducto='208';
+UPDATE productos SET nom_producto='CREMA SENSUAL MIST 240ML', fecha_ingreso='2019-04-11 15:02:44', idcategoria='2', idmarca='468', UPDATE productos SET nom_producto='CREMA SENSUAL MIST 240ML', fecha_ingreso='2019-04-11 15:02:44', idcategoria='2', idmarca='468' WHERE idproducto='2719';
+UPDATE productos SET nom_producto=' CREMA PARA CUERPO VILLE DE SEDUCCION DE 240ML', fecha_ingreso='2019-04-11 03:02:44', idcategoria='2', idmarca='468', UPDATE productos SET nom_producto=' CREMA PARA CUERPO VILLE DE SEDUCCION DE 240ML', fecha_ingreso='2019-04-11 03:02:44', idcategoria='2', idmarca='468' WHERE idproducto='2719';
+UPDATE productos SET nom_producto=' BOLSA PLASTICA DE 5 LIBRAS 9X14
+', fecha_ingreso='2018-07-16 02:25:35', idcategoria='40', idmarca='503', UPDATE productos SET nom_producto=' BOLSA PLASTICA DE 5 LIBRAS 9X14
+', fecha_ingreso='2018-07-16 02:25:35', idcategoria='40', idmarca='503' WHERE idproducto='209';
+UPDATE productos SET nom_producto='BOLSA PLASTICADE 3 LIBRAS 7X11
+
+', fecha_ingreso='2018-09-04 09:49:56', idcategoria='60', idmarca='53', UPDATE productos SET nom_producto='BOLSA PLASTICADE 3 LIBRAS 7X11
+
+', fecha_ingreso='2018-09-04 09:49:56', idcategoria='60', idmarca='53' WHERE idproducto='3616';
+UPDATE productos SET nom_producto='BOLSA PLASTICADE 3 LIBRAS 7X11
+
+', fecha_ingreso='2018-09-04 09:49:56', idcategoria='60', idmarca='53', UPDATE productos SET nom_producto='BOLSA PLASTICADE 3 LIBRAS 7X11
+
+', fecha_ingreso='2018-09-04 09:49:56', idcategoria='60', idmarca='53' WHERE idproducto='3616';
+UPDATE productos SET nom_producto='BOLSA PLASTICA DE 3 LIBRAS 7X11
+
+', fecha_ingreso='2018-09-04 09:49:56', idcategoria='60', idmarca='53', UPDATE productos SET nom_producto='BOLSA PLASTICA DE 3 LIBRAS 7X11
+
+', fecha_ingreso='2018-09-04 09:49:56', idcategoria='60', idmarca='53' WHERE idproducto='3616';
+UPDATE productos SET nom_producto='BOLSA PLASTICA PARA TOPOGIGIO 3X8
+', fecha_ingreso='2018-07-21 10:09:02', idcategoria='60', idmarca='53', UPDATE productos SET nom_producto='BOLSA PLASTICA PARA TOPOGIGIO 3X8
+', fecha_ingreso='2018-07-21 10:09:02', idcategoria='60', idmarca='53' WHERE idproducto='3467';
+UPDATE productos SET nom_producto='BOLSA PLASTICA 1/2 JARDIN', fecha_ingreso='2019-04-11 03:47:10', idcategoria='40', idmarca='503', UPDATE productos SET nom_producto='BOLSA PLASTICA 1/2 JARDIN', fecha_ingreso='2019-04-11 03:47:10', idcategoria='40', idmarca='503' WHERE idproducto='203';
+UPDATE productos SET nom_producto='BOLSA PLASTICA
+ MINI GABACHA  COLORES', fecha_ingreso='2019-04-11 03:49:14', idcategoria='40', idmarca='503', UPDATE productos SET nom_producto='BOLSA PLASTICA
+ MINI GABACHA  COLORES', fecha_ingreso='2019-04-11 03:49:14', idcategoria='40', idmarca='503' WHERE idproducto='206';
+UPDATE productos SET nom_producto='BOLSA  PLASTICA 
+#3
+', fecha_ingreso='2018-09-30 09:14:07', idcategoria='60', idmarca='53', UPDATE productos SET nom_producto='BOLSA  PLASTICA 
+#3
+', fecha_ingreso='2018-09-30 09:14:07', idcategoria='60', idmarca='53' WHERE idproducto='3715';
+UPDATE productos SET nom_producto='BOLSA PLASTICA # 4
+', fecha_ingreso='2018-09-21 11:00:17', idcategoria='60', idmarca='53', UPDATE productos SET nom_producto='BOLSA PLASTICA # 4
+', fecha_ingreso='2018-09-21 11:00:17', idcategoria='60', idmarca='53' WHERE idproducto='3660';
+UPDATE productos SET nom_producto='BOLSA PLASTICA
+ DE ARROBA
+', fecha_ingreso='2018-09-27 09:29:26', idcategoria='60', idmarca='53', UPDATE productos SET nom_producto='BOLSA PLASTICA
+ DE ARROBA
+', fecha_ingreso='2018-09-27 09:29:26', idcategoria='60', idmarca='53' WHERE idproducto='3672';
+INSERT INTO productos (nom_producto,fecha_ingreso,idcategoria,idmarca) VALUES('BOLSA PLASTICA # 1
+','2019-04-11 16:15:21','60','53');
+INSERT INTO proveedores_productos (idproveedor,idproducto) VALUES('2','4188');
+INSERT INTO productos (nom_producto,fecha_ingreso,idcategoria,idmarca) VALUES('BOLSA PLASTICA # 3
+','2019-04-11 16:18:01','60','53');
+INSERT INTO proveedores_productos (idproveedor,idproducto) VALUES('2','4189');
+INSERT INTO productos (nom_producto,fecha_ingreso,idcategoria,idmarca) VALUES('BOLSA PLASTICA # 2
+','2019-04-11 16:19:52','60','53');
+INSERT INTO proveedores_productos (idproveedor,idproducto) VALUES('2','4190');
+INSERT INTO productos (nom_producto,fecha_ingreso,idcategoria,idmarca) VALUES('BOLSA PLASTICA JARDINERA
+','2019-04-11 16:20:44','60','53');
+INSERT INTO proveedores_productos (idproveedor,idproducto) VALUES('2','4191');
+INSERT INTO productos (nom_producto,fecha_ingreso,idcategoria,idmarca) VALUES('BOLSA PLASTICA MINI NEGRA
+','2019-04-11 16:22:07','60','53');
+INSERT INTO proveedores_productos (idproveedor,idproducto) VALUES('2','4192');
+UPDATE productos SET nom_producto='LECHE LIQUIDA SEMIDESCREMADA DE .946 LTR
+ SULA
+', fecha_ingreso='2019-01-05 01:48:55', idcategoria='60', idmarca='53', UPDATE productos SET nom_producto='LECHE LIQUIDA SEMIDESCREMADA DE .946 LTR
+ SULA
+', fecha_ingreso='2019-01-05 01:48:55', idcategoria='60', idmarca='53' WHERE idproducto='3894';
+UPDATE productos SET nom_producto='LECHE LIQUIDA DESLACTOSADASEMIDESCREMADA SULA DE .948 LTR
+
+', fecha_ingreso='2019-01-08 02:22:59', idcategoria='60', idmarca='53', UPDATE productos SET nom_producto='LECHE LIQUIDA DESLACTOSADASEMIDESCREMADA SULA DE .948 LTR
+
+', fecha_ingreso='2019-01-08 02:22:59', idcategoria='60', idmarca='53' WHERE idproducto='3914';
+UPDATE productos SET nom_producto='LECHE LIQUIDA ENTERA DE .946 LTR
+ SULA
+', fecha_ingreso='2019-01-05 01:47:50', idcategoria='60', idmarca='53', UPDATE productos SET nom_producto='LECHE LIQUIDA ENTERA DE .946 LTR
+ SULA
+', fecha_ingreso='2019-01-05 01:47:50', idcategoria='60', idmarca='53' WHERE idproducto='3892';
+UPDATE productos SET nom_producto='LECHE LIQUIDA  DESCREMADA  DE .946 LTR
+SULA
+', fecha_ingreso='2019-01-05 01:48:29', idcategoria='60', idmarca='53', UPDATE productos SET nom_producto='LECHE LIQUIDA  DESCREMADA  DE .946 LTR
+SULA
+', fecha_ingreso='2019-01-05 01:48:29', idcategoria='60', idmarca='53' WHERE idproducto='3893';
+INSERT INTO productos (nom_producto,fecha_ingreso,idcategoria,idmarca) VALUES('MUSUN  SOLUBLE GRANULADO DE 100GRS
+','2019-04-11 17:01:56','60','53');
+INSERT INTO proveedores_productos (idproveedor,idproducto) VALUES('2','4193');
+INSERT INTO productos (nom_producto,fecha_ingreso,idcategoria,idmarca) VALUES('JUEGO DE VASDOS DE CRISTAL DE 4 PIEZAS LOTUS
+','2019-04-11 17:09:25','60','53');
+INSERT INTO proveedores_productos (idproveedor,idproducto) VALUES('2','4194');
+UPDATE productos SET nom_producto='SET DE VASOS DE VIDRIO GLASSWARE 6 PCS  CON ESTAMPADO', fecha_ingreso='2019-04-11 05:14:40', idcategoria='29', idmarca='53', UPDATE productos SET nom_producto='SET DE VASOS DE VIDRIO GLASSWARE 6 PCS  CON ESTAMPADO', fecha_ingreso='2019-04-11 05:14:40', idcategoria='29', idmarca='53' WHERE idproducto='1691';
+UPDATE productos SET nom_producto='SET DE TAZAS 10 ONZ MUG  3 PCS', fecha_ingreso='2019-04-11 05:17:42', idcategoria='29', idmarca='371', UPDATE productos SET nom_producto='SET DE TAZAS 10 ONZ MUG  3 PCS', fecha_ingreso='2019-04-11 05:17:42', idcategoria='29', idmarca='371' WHERE idproducto='2438';
+UPDATE productos SET nom_producto='GANCHO DE BAMBOO XINTONG
+', fecha_ingreso='2019-01-02 02:40:43', idcategoria='60', idmarca='53', UPDATE productos SET nom_producto='GANCHO DE BAMBOO XINTONG
+', fecha_ingreso='2019-01-02 02:40:43', idcategoria='60', idmarca='53' WHERE idproducto='3854';
+UPDATE productos SET nom_producto='GANCHO DE BAMBOO XINTONG
+', fecha_ingreso='2019-01-02 02:40:43', idcategoria='60', idmarca='53', UPDATE productos SET nom_producto='GANCHO DE BAMBOO XINTONG
+', fecha_ingreso='2019-01-02 02:40:43', idcategoria='60', idmarca='53' WHERE idproducto='3854';
+UPDATE productos SET nom_producto='GANCHO DE BAMBOO XINTONG
+', fecha_ingreso='2018-12-11 12:17:32', idcategoria='60', idmarca='53', UPDATE productos SET nom_producto='GANCHO DE BAMBOO XINTONG
+', fecha_ingreso='2018-12-11 12:17:32', idcategoria='60', idmarca='53' WHERE idproducto='3796';
+UPDATE productos SET nom_producto='DETERGENTE XEDEX MULTIACCION AZUL 125G
+', fecha_ingreso='2018-08-07 09:29:17', idcategoria='60', idmarca='53', UPDATE productos SET nom_producto='DETERGENTE XEDEX MULTIACCION AZUL 125G
+', fecha_ingreso='2018-08-07 09:29:17', idcategoria='60', idmarca='53' WHERE idproducto='3538';
+UPDATE productos SET nom_producto='MAX ROSADO SUEÑOS FLORALES 1350G', fecha_ingreso='2019-04-12 11:41:04', idcategoria='11', idmarca='83', UPDATE productos SET nom_producto='MAX ROSADO SUEÑOS FLORALES 1350G', fecha_ingreso='2019-04-12 11:41:04', idcategoria='11', idmarca='83' WHERE idproducto='1155';
+UPDATE productos SET nom_producto='MAX PODER VERDE LIMON XTREME 1350G
+
+', fecha_ingreso='2018-05-15 09:51:37', idcategoria='11', idmarca='83', UPDATE productos SET nom_producto='MAX PODER VERDE LIMON XTREME 1350G
+
+', fecha_ingreso='2018-05-15 09:51:37', idcategoria='11', idmarca='83' WHERE idproducto='3053';
+UPDATE productos SET nom_producto='MAX PODER VERDE OSCURO 1350G
+
+', fecha_ingreso='2018-05-15 09:53:16', idcategoria='11', idmarca='83', UPDATE productos SET nom_producto='MAX PODER VERDE OSCURO 1350G
+
+', fecha_ingreso='2018-05-15 09:53:16', idcategoria='11', idmarca='83' WHERE idproducto='3054';
+UPDATE productos SET nom_producto='JABON MAX ANARANJADO NEUTRO 1275G', fecha_ingreso='2019-03-21 02:25:19', idcategoria='11', idmarca='83', UPDATE productos SET nom_producto='JABON MAX ANARANJADO NEUTRO 1275G', fecha_ingreso='2019-03-21 02:25:19', idcategoria='11', idmarca='83' WHERE idproducto='1149';
+UPDATE productos SET nom_producto='MAX PODER VERDE LIMON XTREME 1275G
+
+', fecha_ingreso='2018-05-15 09:51:37', idcategoria='11', idmarca='83', UPDATE productos SET nom_producto='MAX PODER VERDE LIMON XTREME 1275G
+
+', fecha_ingreso='2018-05-15 09:51:37', idcategoria='11', idmarca='83' WHERE idproducto='3053';
+UPDATE productos SET nom_producto='MAX PODER VERDE OSCURO 1275G
+
+', fecha_ingreso='2018-05-15 09:53:16', idcategoria='11', idmarca='83', UPDATE productos SET nom_producto='MAX PODER VERDE OSCURO 1275G
+
+', fecha_ingreso='2018-05-15 09:53:16', idcategoria='11', idmarca='83' WHERE idproducto='3054';
+UPDATE productos SET nom_producto='MAX ROSADO SUEÑOS FLORALES 1275G', fecha_ingreso='2019-04-12 11:41:04', idcategoria='11', idmarca='83', UPDATE productos SET nom_producto='MAX ROSADO SUEÑOS FLORALES 1275G', fecha_ingreso='2019-04-12 11:41:04', idcategoria='11', idmarca='83' WHERE idproducto='1155';
+UPDATE productos SET nom_producto='FRIJILES ROJO VOLTEADOS LA CHULA 709G
+', fecha_ingreso='2018-05-17 11:39:22', idcategoria='38', idmarca='322', UPDATE productos SET nom_producto='FRIJILES ROJO VOLTEADOS LA CHULA 709G
+', fecha_ingreso='2018-05-17 11:39:22', idcategoria='38', idmarca='322' WHERE idproducto='3173';
+UPDATE productos SET nom_producto='SALSA  RANCHERA LA CHULA 106G', fecha_ingreso='2019-04-12 11:44:59', idcategoria='26', idmarca='322', UPDATE productos SET nom_producto='SALSA  RANCHERA LA CHULA 106G', fecha_ingreso='2019-04-12 11:44:59', idcategoria='26', idmarca='322' WHERE idproducto='1569';
+UPDATE productos SET nom_producto='JABON MAX AZUL BLANCOS BRILLANTES1275G', fecha_ingreso='2019-03-21 02:25:46', idcategoria='11', idmarca='83', UPDATE productos SET nom_producto='JABON MAX AZUL BLANCOS BRILLANTES1275G', fecha_ingreso='2019-03-21 02:25:46', idcategoria='11', idmarca='83' WHERE idproducto='1150';
+UPDATE productos SET nom_producto='JABON MAX BLANCO MAXITEL 1275G', fecha_ingreso='2019-03-21 02:26:17', idcategoria='11', idmarca='83', UPDATE productos SET nom_producto='JABON MAX BLANCO MAXITEL 1275G', fecha_ingreso='2019-03-21 02:26:17', idcategoria='11', idmarca='83' WHERE idproducto='1151';
+UPDATE productos SET nom_producto=' JABON MAX AMARILLO FRESCURA TROPICAL 1275G', fecha_ingreso='2019-03-21 02:24:49', idcategoria='11', idmarca='83', UPDATE productos SET nom_producto=' JABON MAX AMARILLO FRESCURA TROPICAL 1275G', fecha_ingreso='2019-03-21 02:24:49', idcategoria='11', idmarca='83' WHERE idproducto='1148';
+UPDATE productos SET nom_producto='JABON EXTRA ANARANJADO CON BICARBONATO 1275G', fecha_ingreso='2019-03-21 02:43:06', idcategoria='11', idmarca='88', UPDATE productos SET nom_producto='JABON EXTRA ANARANJADO CON BICARBONATO 1275G', fecha_ingreso='2019-03-21 02:43:06', idcategoria='11', idmarca='88' WHERE idproducto='2033';
+UPDATE productos SET nom_producto='JABON EXTRA ROSADO CON ESENCIA FLORAL 1275G', fecha_ingreso='2019-03-21 02:42:41', idcategoria='11', idmarca='88', UPDATE productos SET nom_producto='JABON EXTRA ROSADO CON ESENCIA FLORAL 1275G', fecha_ingreso='2019-03-21 02:42:41', idcategoria='11', idmarca='88' WHERE idproducto='2034';
+UPDATE productos SET nom_producto='JABON SURF ROSADO ROSAS Y LILAS 1275G', fecha_ingreso='2019-03-21 02:43:36', idcategoria='11', idmarca='87', UPDATE productos SET nom_producto='JABON SURF ROSADO ROSAS Y LILAS 1275G', fecha_ingreso='2019-03-21 02:43:36', idcategoria='11', idmarca='87' WHERE idproducto='1839';
+UPDATE productos SET nom_producto='JABON CENTELLA ROSADO PETALOS Y ROSAS 1275G', fecha_ingreso='2019-03-21 02:40:15', idcategoria='11', idmarca='84', UPDATE productos SET nom_producto='JABON CENTELLA ROSADO PETALOS Y ROSAS 1275G', fecha_ingreso='2019-03-21 02:40:15', idcategoria='11', idmarca='84' WHERE idproducto='365';
+UPDATE productos SET nom_producto='JABON CENTELLA VERDE FRESCURA FLORAL 1275G', fecha_ingreso='2019-03-21 02:39:35', idcategoria='11', idmarca='84', UPDATE productos SET nom_producto='JABON CENTELLA VERDE FRESCURA FLORAL 1275G', fecha_ingreso='2019-03-21 02:39:35', idcategoria='11', idmarca='84' WHERE idproducto='367';
+UPDATE productos SET nom_producto='JABON CENTELLA AMARILLO FRAGANCIA FLORAL  1275G
+', fecha_ingreso='2018-08-15 05:06:40', idcategoria='60', idmarca='53', UPDATE productos SET nom_producto='JABON CENTELLA AMARILLO FRAGANCIA FLORAL  1275G
+', fecha_ingreso='2018-08-15 05:06:40', idcategoria='60', idmarca='53' WHERE idproducto='3569';
+UPDATE productos SET nom_producto='JABON CENTELLA BLANCO BLANCURA NATURAL 1275G', fecha_ingreso='2019-03-21 02:38:30', idcategoria='11', idmarca='84', UPDATE productos SET nom_producto='JABON CENTELLA BLANCO BLANCURA NATURAL 1275G', fecha_ingreso='2019-03-21 02:38:30', idcategoria='11', idmarca='84' WHERE idproducto='2131';
+UPDATE productos SET nom_producto='JABON ROKU AMARILLO
+', fecha_ingreso='2018-08-18 09:48:26', idcategoria='60', idmarca='53', UPDATE productos SET nom_producto='JABON ROKU AMARILLO
+', fecha_ingreso='2018-08-18 09:48:26', idcategoria='60', idmarca='53' WHERE idproducto='3578';
+INSERT INTO productos (nom_producto,fecha_ingreso,idcategoria,idmarca) VALUES('JABON OLE MIEL HIDRATANTE 150 G','2019-04-12 14:22:22','60','53');
+INSERT INTO proveedores_productos (idproveedor,idproducto) VALUES('2','4195');
+UPDATE productos SET nom_producto='JABON MAX FRESCURA SILVESTRE (VERDE LIMON) 1275G', fecha_ingreso='2018-07-13 05:45:45', idcategoria='11', idmarca='83', UPDATE productos SET nom_producto='JABON MAX FRESCURA SILVESTRE (VERDE LIMON) 1275G', fecha_ingreso='2018-07-13 05:45:45', idcategoria='11', idmarca='83' WHERE idproducto='1152';
+UPDATE productos SET nom_producto='JABON MAX FRESCURA INTENSA (ANARANJADO NEUTRO) 1275G', fecha_ingreso='2019-03-21 02:25:19', idcategoria='11', idmarca='83', UPDATE productos SET nom_producto='JABON MAX FRESCURA INTENSA (ANARANJADO NEUTRO) 1275G', fecha_ingreso='2019-03-21 02:25:19', idcategoria='11', idmarca='83' WHERE idproducto='1149';
+UPDATE productos SET nom_producto='JABON MAX PODER VERDE OSCURO 1275G
+
+', fecha_ingreso='2018-05-15 09:53:16', idcategoria='11', idmarca='83', UPDATE productos SET nom_producto='JABON MAX PODER VERDE OSCURO 1275G
+
+', fecha_ingreso='2018-05-15 09:53:16', idcategoria='11', idmarca='83' WHERE idproducto='3054';
+UPDATE productos SET nom_producto='HARINA DE ARROZ 
+
+', fecha_ingreso='2019-02-25 11:04:13', idcategoria='60', idmarca='53', UPDATE productos SET nom_producto='HARINA DE ARROZ 
+
+', fecha_ingreso='2019-02-25 11:04:13', idcategoria='60', idmarca='53' WHERE idproducto='4064';
+UPDATE productos SET nom_producto='HARINA DE ARROZ 
+
+', fecha_ingreso='2019-02-25 11:04:13', idcategoria='60', idmarca='53', UPDATE productos SET nom_producto='HARINA DE ARROZ 
+
+', fecha_ingreso='2019-02-25 11:04:13', idcategoria='60', idmarca='53' WHERE idproducto='4064';
+UPDATE productos SET nom_producto='MAIZ', fecha_ingreso='2018-06-25 10:18:16', idcategoria='24', idmarca='53', UPDATE productos SET nom_producto='MAIZ', fecha_ingreso='2018-06-25 10:18:16', idcategoria='24', idmarca='53' WHERE idproducto='1106';
+UPDATE productos SET nom_producto='MAIZ', fecha_ingreso='2018-06-25 10:18:16', idcategoria='24', idmarca='53', UPDATE productos SET nom_producto='MAIZ', fecha_ingreso='2018-06-25 10:18:16', idcategoria='24', idmarca='53' WHERE idproducto='1106';
+UPDATE productos SET nom_producto='MANI JAPONES
+', fecha_ingreso='2019-05-25 12:35:35', idcategoria='60', idmarca='53', UPDATE productos SET nom_producto='MANI JAPONES
+', fecha_ingreso='2019-05-25 12:35:35', idcategoria='60', idmarca='53' WHERE idproducto='4326';
+UPDATE productos SET nom_producto='ALKA-SELTZER EXTREME', fecha_ingreso='2020-01-19 05:30:23', idcategoria='61', idmarca='20', UPDATE productos SET nom_producto='ALKA-SELTZER EXTREME', fecha_ingreso='2020-01-19 05:30:23', idcategoria='61', idmarca='20' WHERE idproducto='2697';
+UPDATE productos SET nom_producto='SUERO PLASTICO ORALDEX', fecha_ingreso='2020-01-20 10:15:03', idcategoria='61', idmarca='200', UPDATE productos SET nom_producto='SUERO PLASTICO ORALDEX', fecha_ingreso='2020-01-20 10:15:03', idcategoria='61', idmarca='200' WHERE idproducto='1821';
+UPDATE productos SET nom_producto='SUERO ORAL ANCALMO COCO 54 SOBRES
+', fecha_ingreso='2020-01-14 11:25:38', idcategoria='61', idmarca='53', UPDATE productos SET nom_producto='SUERO ORAL ANCALMO COCO 54 SOBRES
+', fecha_ingreso='2020-01-14 11:25:38', idcategoria='61', idmarca='53' WHERE idproducto='4876';
+UPDATE productos SET nom_producto='TABCIN ANTIGRIPAL ADULTO', fecha_ingreso='2020-01-14 12:13:38', idcategoria='61', idmarca='53', UPDATE productos SET nom_producto='TABCIN ANTIGRIPAL ADULTO', fecha_ingreso='2020-01-14 12:13:38', idcategoria='61', idmarca='53' WHERE idproducto='4909';
+UPDATE productos SET nom_producto='TABCIN ANTIGRIPAL ADULTO', fecha_ingreso='2020-01-14 12:13:38', idcategoria='61', idmarca='20', UPDATE productos SET nom_producto='TABCIN ANTIGRIPAL ADULTO', fecha_ingreso='2020-01-14 12:13:38', idcategoria='61', idmarca='20' WHERE idproducto='4909';
+UPDATE productos SET nom_producto='ALCOHOL   120ML', fecha_ingreso='2020-01-21 11:17:28', idcategoria='61', idmarca='53', UPDATE productos SET nom_producto='ALCOHOL   120ML', fecha_ingreso='2020-01-21 11:17:28', idcategoria='61', idmarca='53' WHERE idproducto='54';
+UPDATE productos SET nom_producto='AJOSX3', fecha_ingreso='2020-01-22 11:11:59', idcategoria='44', idmarca='242', UPDATE productos SET nom_producto='AJOSX3', fecha_ingreso='2020-01-22 11:11:59', idcategoria='44', idmarca='242' WHERE idproducto='46';

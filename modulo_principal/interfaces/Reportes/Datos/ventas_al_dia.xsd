@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ventas_al_dia" targetNamespace="http://tempuri.org/ventas_al_dia.xsd" xmlns:mstns="http://tempuri.org/ventas_al_dia.xsd" xmlns="http://tempuri.org/ventas_al_dia.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ventas_al_dia" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="ventas_al_dia" msprop:Generator_UserDSName="ventas_al_dia">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ventas" msprop:Generator_TableClassName="ventasDataTable" msprop:Generator_TableVarName="tableventas" msprop:Generator_TablePropName="ventas" msprop:Generator_RowDeletingName="ventasRowDeleting" msprop:Generator_RowChangingName="ventasRowChanging" msprop:Generator_RowEvHandlerName="ventasRowChangeEventHandler" msprop:Generator_RowDeletedName="ventasRowDeleted" msprop:Generator_UserTableName="ventas" msprop:Generator_RowChangedName="ventasRowChanged" msprop:Generator_RowEvArgName="ventasRowChangeEvent" msprop:Generator_RowClassName="ventasRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ticket" msprop:Generator_ColumnVarNameInTable="columnticket" msprop:Generator_ColumnPropNameInRow="ticket" msprop:Generator_ColumnPropNameInTable="ticketColumn" msprop:Generator_UserColumnName="ticket" type="xs:string" minOccurs="0" />
+              <xs:element name="correlativo" msprop:Generator_ColumnVarNameInTable="columncorrelativo" msprop:Generator_ColumnPropNameInRow="correlativo" msprop:Generator_ColumnPropNameInTable="correlativoColumn" msprop:Generator_UserColumnName="correlativo" type="xs:string" minOccurs="0" />
+              <xs:element name="fecha" msprop:Generator_ColumnVarNameInTable="columnfecha" msprop:Generator_ColumnPropNameInRow="fecha" msprop:Generator_ColumnPropNameInTable="fechaColumn" msprop:Generator_UserColumnName="fecha" type="xs:string" minOccurs="0" />
+              <xs:element name="monto_total" msprop:Generator_ColumnVarNameInTable="columnmonto_total" msprop:Generator_ColumnPropNameInRow="monto_total" msprop:Generator_ColumnPropNameInTable="monto_totalColumn" msprop:Generator_UserColumnName="monto_total" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

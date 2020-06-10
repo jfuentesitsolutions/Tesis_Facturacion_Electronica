@@ -1,0 +1,9 @@
+C:\Users\Fuentes\Desktop\Proyecto_gerardo\proyectos\utilitarios\bin\x64\Debug\utilitarios.dll
+C:\Users\Fuentes\Desktop\Proyecto_gerardo\proyectos\utilitarios\bin\x64\Debug\utilitarios.pdb
+C:\Users\Fuentes\Desktop\Proyecto_gerardo\proyectos\utilitarios\obj\x64\Debug\utilitarios.dll
+C:\Users\Fuentes\Desktop\Proyecto_gerardo\proyectos\utilitarios\obj\x64\Debug\utilitarios.pdb
+E:\Escritorio\Proyecto_gerardo\proyectos\utilitarios\bin\x64\Debug\utilitarios.dll
+E:\Escritorio\Proyecto_gerardo\proyectos\utilitarios\bin\x64\Debug\utilitarios.pdb
+E:\Escritorio\Proyecto_gerardo\proyectos\utilitarios\obj\x64\Debug\utilitarios.csprojResolveAssemblyReference.cache
+E:\Escritorio\Proyecto_gerardo\proyectos\utilitarios\obj\x64\Debug\utilitarios.dll
+E:\Escritorio\Proyecto_gerardo\proyectos\utilitarios\obj\x64\Debug\utilitarios.pdb

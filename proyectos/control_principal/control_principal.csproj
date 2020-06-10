@@ -1,0 +1,467 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{094CC055-292B-478A-A061-B54DC229A121}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>control_principal</RootNamespace>
+    <AssemblyName>control_principal</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AltoControls, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\modulo_principal\packages\AltoControls.1.0.1\lib\AltoControls.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\modulo_principal\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="cache_tablas\cache_conexiones\cache.cs" />
+    <Compile Include="cache_tablas\tabla_empleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cache_tablas\tabla_empleados.Designer.cs">
+      <DependentUpon>tabla_empleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cache_tablas\tabla_grupos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cache_tablas\tabla_grupos.Designer.cs">
+      <DependentUpon>tabla_grupos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cache_tablas\tabla_unidades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cache_tablas\tabla_unidades.Designer.cs">
+      <DependentUpon>tabla_unidades.cs</DependentUpon>
+    </Compile>
+    <Compile Include="configuraciones_iniciales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="configuraciones_iniciales.Designer.cs">
+      <DependentUpon>configuraciones_iniciales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="configuracion_inicial\config_inicial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="configuracion_inicial\config_inicial.Designer.cs">
+      <DependentUpon>config_inicial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="login.Designer.cs">
+      <DependentUpon>login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="manejadorVentanas.cs" />
+    <Compile Include="ModulosFacturaElectronica\FirmarPDF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModulosFacturaElectronica\FirmarPDF.Designer.cs">
+      <DependentUpon>FirmarPDF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModulosFacturaElectronica\GenerarJSON.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModulosFacturaElectronica\GenerarJSON.Designer.cs">
+      <DependentUpon>GenerarJSON.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModulosFacturaElectronica\GenerarPDF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModulosFacturaElectronica\GenerarPDF.Designer.cs">
+      <DependentUpon>GenerarPDF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModulosFacturaElectronica\PrincipalModulosFacturaElec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModulosFacturaElectronica\PrincipalModulosFacturaElec.Designer.cs">
+      <DependentUpon>PrincipalModulosFacturaElec.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModulosFacturaElectronica\ValidarJSON.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModulosFacturaElectronica\ValidarJSON.Designer.cs">
+      <DependentUpon>ValidarJSON.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModulosFacturaElectronica\ValidarPDF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModulosFacturaElectronica\ValidarPDF.Designer.cs">
+      <DependentUpon>ValidarPDF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModulosFacturaElectronica\ValidarXML.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModulosFacturaElectronica\ValidarXML.Designer.cs">
+      <DependentUpon>ValidarXML.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModulosFacturaElectronica\VisorPDF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModulosFacturaElectronica\VisorPDF.Designer.cs">
+      <DependentUpon>VisorPDF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="principal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="principal.Designer.cs">
+      <DependentUpon>principal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="splash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="splash.Designer.cs">
+      <DependentUpon>splash.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="cache_tablas\tabla_empleados.resx">
+      <DependentUpon>tabla_empleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cache_tablas\tabla_grupos.resx">
+      <DependentUpon>tabla_grupos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cache_tablas\tabla_unidades.resx">
+      <DependentUpon>tabla_unidades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="configuraciones_iniciales.resx">
+      <DependentUpon>configuraciones_iniciales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="configuracion_inicial\config_inicial.resx">
+      <DependentUpon>config_inicial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="login.resx">
+      <DependentUpon>login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModulosFacturaElectronica\FirmarPDF.resx">
+      <DependentUpon>FirmarPDF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModulosFacturaElectronica\GenerarJSON.resx">
+      <DependentUpon>GenerarJSON.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModulosFacturaElectronica\GenerarPDF.resx">
+      <DependentUpon>GenerarPDF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModulosFacturaElectronica\PrincipalModulosFacturaElec.resx">
+      <DependentUpon>PrincipalModulosFacturaElec.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModulosFacturaElectronica\ValidarJSON.resx">
+      <DependentUpon>ValidarJSON.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModulosFacturaElectronica\ValidarPDF.resx">
+      <DependentUpon>ValidarPDF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModulosFacturaElectronica\ValidarXML.resx">
+      <DependentUpon>ValidarXML.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModulosFacturaElectronica\VisorPDF.resx">
+      <DependentUpon>VisorPDF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="principal.resx">
+      <DependentUpon>principal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="splash.resx">
+      <DependentUpon>splash.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\modulo_principal\FirmarPDF\FirmarPDF.csproj">
+      <Project>{08df8707-3f2a-4ab8-8cd9-68d5ca7f0db3}</Project>
+      <Name>FirmarPDF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\modulo_principal\gadgets\gadgets.csproj">
+      <Project>{49ab546f-3431-482b-a8d0-c96639346bc4}</Project>
+      <Name>gadgets</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\modulo_principal\interfaces\interfaces.csproj">
+      <Project>{addb7abc-3cad-41e1-a61c-58fb7158b645}</Project>
+      <Name>interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\modulo_principal\ModulosfacturaElectronica\ModulosfacturaElectronica.csproj">
+      <Project>{bbc21a4c-4fe5-4d9f-a5e5-5e33bc53b2a9}</Project>
+      <Name>ModulosfacturaElectronica</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\cache_manager\cache_manager.csproj">
+      <Project>{055d52e4-233c-45c3-82e4-adf0361408de}</Project>
+      <Name>cache_manager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\conexiones_BD\conexiones_BD.csproj">
+      <Project>{46262f34-63b5-4da4-9d5d-f0111c13b65d}</Project>
+      <Name>conexiones_BD</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\sessionManager\sessionManager.csproj">
+      <Project>{3bf0dda4-44dc-48b9-893c-26c262edb3d9}</Project>
+      <Name>sessionManager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\utilitarios\utilitarios.csproj">
+      <Project>{7aea9e83-c821-4dfd-ad6e-3317f25025ab}</Project>
+      <Name>utilitarios</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bill_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\medal_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\restore.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\restore %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Menu1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\xml32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\validar32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pdf32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\firmar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\firmar32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\certificado32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\json.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\firmarpdf.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\return2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\generarpfx.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\crearJson.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\crearPDF1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\validarJSON.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\validarpdf.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\validar xml.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder22.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\return22.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\validar xml2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\crearPDF2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\validarpdf2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\firmarpdf2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\crearJson2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="AxAcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\xml-file.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pdf %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\js-file.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\diploma.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\xml %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pdf %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\json-file.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\json1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Genrar json.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\firma pdf 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cerrar2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cerrar1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\validarJSON2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\generarpfx2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\visible.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\novisible.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\novisible2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\visible1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\visible2.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

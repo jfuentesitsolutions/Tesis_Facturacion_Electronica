@@ -1,0 +1,3 @@
+J:\Escritorio\Proyecto_gerardo\proyecto\modulo_principal\espera_de_datos\obj\Debug\espera_de_datos.Properties.Resources.resources
+J:\Escritorio\Proyecto_gerardo\proyecto\modulo_principal\espera_de_datos\obj\Debug\espera_de_datos.splash_espera.resources
+J:\Escritorio\Proyecto_gerardo\proyecto\modulo_principal\espera_de_datos\obj\Debug\espera_de_datos.csproj.GenerateResource.Cache

@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{46262F34-63B5-4DA4-9D5D-F0111C13B65D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>conexiones_BD</RootNamespace>
+    <AssemblyName>conexiones_BD</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="LibPrintTicket">
+      <HintPath>..\..\..\..\Programas\MySql\LibPrintTicket.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.11.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Programas\MySql\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MySqlBackup, Version=2.0.12.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\modulo_principal\packages\MySqlBackup.NET.2.0.12\lib\net45\MySqlBackup.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="clases\bancos.cs" />
+    <Compile Include="clases\cajas.cs" />
+    <Compile Include="clases\cargos.cs" />
+    <Compile Include="clases\categorias.cs" />
+    <Compile Include="clases\cheques.cs" />
+    <Compile Include="clases\clientes.cs" />
+    <Compile Include="clases\codigos.cs" />
+    <Compile Include="clases\compras\anulaciones_compras.cs" />
+    <Compile Include="clases\compras\compras.cs" />
+    <Compile Include="clases\compras\detalles_compras.cs" />
+    <Compile Include="clases\compras\facturas_compras.cs" />
+    <Compile Include="clases\configuracion_inicial.cs" />
+    <Compile Include="clases\cortes_diarios.cs" />
+    <Compile Include="clases\cortes_sucursales.cs" />
+    <Compile Include="clases\ctrl_errores\errores.cs" />
+    <Compile Include="clases\cuentas_proveedores.cs" />
+    <Compile Include="clases\descuentos.cs" />
+    <Compile Include="clases\empleados.cs" />
+    <Compile Include="clases\empleados_sucursales.cs" />
+    <Compile Include="clases\empresa.cs" />
+    <Compile Include="clases\entidad.cs" />
+    <Compile Include="clases\estantes.cs" />
+    <Compile Include="clases\formas_pago.cs" />
+    <Compile Include="clases\grupos.cs" />
+    <Compile Include="clases\marcas.cs" />
+    <Compile Include="clases\permisos.cs" />
+    <Compile Include="clases\permisos_grupos.cs" />
+    <Compile Include="clases\presentaciones.cs" />
+    <Compile Include="clases\presentaciones_productos.cs" />
+    <Compile Include="clases\productos.cs" />
+    <Compile Include="clases\productos_codigos.cs" />
+    <Compile Include="clases\proveedores.cs" />
+    <Compile Include="clases\proveedores_productos.cs" />
+    <Compile Include="clases\resoluciones.cs" />
+    <Compile Include="clases\sucursales.cs" />
+    <Compile Include="clases\sucursales_productos.cs" />
+    <Compile Include="clases\tarjetas.cs" />
+    <Compile Include="clases\tipos_factura.cs" />
+    <Compile Include="clases\tipos_gastos.cs" />
+    <Compile Include="clases\tipo_compra.cs" />
+    <Compile Include="clases\traslados\detalle_producto_traslado.cs" />
+    <Compile Include="clases\traslados\traslado.cs" />
+    <Compile Include="clases\usuarios.cs" />
+    <Compile Include="clases\utilidades.cs" />
+    <Compile Include="clases\ventas\anulaciones.cs" />
+    <Compile Include="clases\ventas\correlativos_tickets.cs" />
+    <Compile Include="clases\ventas\detalles_productos_venta_factura.cs" />
+    <Compile Include="clases\ventas\detalles_productos_venta_ticket.cs" />
+    <Compile Include="clases\ventas\facturas.cs" />
+    <Compile Include="clases\ventas\impresion_prueba.cs" />
+    <Compile Include="clases\ventas\tickets.cs" />
+    <Compile Include="clases\ventas\ventas.cs" />
+    <Compile Include="Conexion.cs" />
+    <Compile Include="farmacias.cs" />
+    <Compile Include="log_sentensias.cs" />
+    <Compile Include="operaciones.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\sessionManager\sessionManager.csproj">
+      <Project>{3bf0dda4-44dc-48b9-893c-26c262edb3d9}</Project>
+      <Name>sessionManager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\utilitarios\utilitarios.csproj">
+      <Project>{7aea9e83-c821-4dfd-ad6e-3317f25025ab}</Project>
+      <Name>utilitarios</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

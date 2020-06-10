@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="reporte_comprasXcliente" targetNamespace="http://tempuri.org/reporte_comprasXcliente.xsd" xmlns:mstns="http://tempuri.org/reporte_comprasXcliente.xsd" xmlns="http://tempuri.org/reporte_comprasXcliente.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="reporte_comprasXcliente" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="reporte_comprasXcliente" msprop:Generator_UserDSName="reporte_comprasXcliente">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="compras_cliente" msprop:Generator_TableClassName="compras_clienteDataTable" msprop:Generator_TableVarName="tablecompras_cliente" msprop:Generator_TablePropName="compras_cliente" msprop:Generator_RowDeletingName="compras_clienteRowDeleting" msprop:Generator_RowChangingName="compras_clienteRowChanging" msprop:Generator_RowEvHandlerName="compras_clienteRowChangeEventHandler" msprop:Generator_RowDeletedName="compras_clienteRowDeleted" msprop:Generator_UserTableName="compras_cliente" msprop:Generator_RowChangedName="compras_clienteRowChanged" msprop:Generator_RowEvArgName="compras_clienteRowChangeEvent" msprop:Generator_RowClassName="compras_clienteRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="correlativo" msprop:Generator_ColumnVarNameInTable="columncorrelativo" msprop:Generator_ColumnPropNameInRow="correlativo" msprop:Generator_ColumnPropNameInTable="correlativoColumn" msprop:Generator_UserColumnName="correlativo" type="xs:string" minOccurs="0" />
+              <xs:element name="fecha" msprop:Generator_ColumnVarNameInTable="columnfecha" msprop:Generator_ColumnPropNameInRow="fecha" msprop:Generator_ColumnPropNameInTable="fechaColumn" msprop:Generator_UserColumnName="fecha" type="xs:string" minOccurs="0" />
+              <xs:element name="monto_total" msprop:Generator_ColumnVarNameInTable="columnmonto_total" msprop:Generator_ColumnPropNameInRow="monto_total" msprop:Generator_ColumnPropNameInTable="monto_totalColumn" msprop:Generator_UserColumnName="monto_total" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

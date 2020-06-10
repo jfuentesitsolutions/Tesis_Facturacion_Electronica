@@ -1,0 +1,9 @@
+C:\Users\Fuentes\Desktop\Proyecto_gerardo\modulo_principal\gadgets\bin\x64\Debug\gadgets.dll
+C:\Users\Fuentes\Desktop\Proyecto_gerardo\modulo_principal\gadgets\bin\x64\Debug\gadgets.pdb
+C:\Users\Fuentes\Desktop\Proyecto_gerardo\modulo_principal\gadgets\obj\x64\Debug\gadgets.dll
+C:\Users\Fuentes\Desktop\Proyecto_gerardo\modulo_principal\gadgets\obj\x64\Debug\gadgets.pdb
+E:\Escritorio\Proyecto_gerardo\modulo_principal\gadgets\bin\x64\Debug\gadgets.dll
+E:\Escritorio\Proyecto_gerardo\modulo_principal\gadgets\bin\x64\Debug\gadgets.pdb
+E:\Escritorio\Proyecto_gerardo\modulo_principal\gadgets\obj\x64\Debug\gadgets.csprojResolveAssemblyReference.cache
+E:\Escritorio\Proyecto_gerardo\modulo_principal\gadgets\obj\x64\Debug\gadgets.dll
+E:\Escritorio\Proyecto_gerardo\modulo_principal\gadgets\obj\x64\Debug\gadgets.pdb

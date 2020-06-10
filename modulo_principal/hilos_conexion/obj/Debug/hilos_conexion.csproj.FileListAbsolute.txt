@@ -1,0 +1,17 @@
+J:\Escritorio\Proyecto_gerardo\proyecto\modulo_principal\hilos_conexion\bin\Debug\hilos_conexion.dll
+J:\Escritorio\Proyecto_gerardo\proyecto\modulo_principal\hilos_conexion\bin\Debug\hilos_conexion.pdb
+J:\Escritorio\Proyecto_gerardo\proyecto\modulo_principal\hilos_conexion\bin\Debug\conexiones_BD.dll
+J:\Escritorio\Proyecto_gerardo\proyecto\modulo_principal\hilos_conexion\bin\Debug\sessionManager.dll
+J:\Escritorio\Proyecto_gerardo\proyecto\modulo_principal\hilos_conexion\bin\Debug\utilitarios.dll
+J:\Escritorio\Proyecto_gerardo\proyecto\modulo_principal\hilos_conexion\bin\Debug\MySql.Data.dll
+J:\Escritorio\Proyecto_gerardo\proyecto\modulo_principal\hilos_conexion\bin\Debug\MySqlBackup.dll
+J:\Escritorio\Proyecto_gerardo\proyecto\modulo_principal\hilos_conexion\bin\Debug\LibPrintTicket.dll
+J:\Escritorio\Proyecto_gerardo\proyecto\modulo_principal\hilos_conexion\bin\Debug\conexiones_BD.pdb
+J:\Escritorio\Proyecto_gerardo\proyecto\modulo_principal\hilos_conexion\bin\Debug\sessionManager.pdb
+J:\Escritorio\Proyecto_gerardo\proyecto\modulo_principal\hilos_conexion\bin\Debug\utilitarios.pdb
+J:\Escritorio\Proyecto_gerardo\proyecto\modulo_principal\hilos_conexion\bin\Debug\MySql.Data.xml
+J:\Escritorio\Proyecto_gerardo\proyecto\modulo_principal\hilos_conexion\obj\Debug\hilos_conexion.csprojResolveAssemblyReference.cache
+J:\Escritorio\Proyecto_gerardo\proyecto\modulo_principal\hilos_conexion\obj\Debug\hilos_conexion.productos_hilos.resources
+J:\Escritorio\Proyecto_gerardo\proyecto\modulo_principal\hilos_conexion\obj\Debug\hilos_conexion.csproj.GenerateResource.Cache
+J:\Escritorio\Proyecto_gerardo\proyecto\modulo_principal\hilos_conexion\obj\Debug\hilos_conexion.dll
+J:\Escritorio\Proyecto_gerardo\proyecto\modulo_principal\hilos_conexion\obj\Debug\hilos_conexion.pdb
