@@ -9,10 +9,10 @@ namespace conexiones_BD.clases
 {
     public class empresa:entidad
     {
-        string nombre_empresa, nrc, razon_social, denominacion, giro, direccion_local, nit, ruta_almacen_pfx, ruta_certificado;
+        string nombre_empresa, nrc, razon_social, denominacion, giro, direccion_local, nit, ruta_almacen_pfx, ruta_certificado, ruta_xml, ruta_pdf;
 
         public empresa(string nombre_empresa, string nrc, string razon_social, string denominacion, string giro, 
-            string direccion_local, string nit, string ruta_certificado, string ruta_almacen_pfx, bool actualizar)
+            string direccion_local, string nit, string ruta_certificado, string ruta_almacen_pfx, bool actualizar, string rxml, string rpdf)
         {
             this.nombre_empresa = nombre_empresa;
             this.nrc = nrc;
@@ -23,6 +23,8 @@ namespace conexiones_BD.clases
             this.nit = nit;
             this.ruta_certificado = ruta_certificado;
             this.ruta_almacen_pfx = ruta_almacen_pfx;
+            this.ruta_xml = rxml;
+            this.ruta_pdf = rpdf;
             if (!actualizar)
             {
                 cargarDatos(generarCampos(), generarValores(), "empresa");
@@ -46,7 +48,8 @@ namespace conexiones_BD.clases
             campos.Add("nit");
             campos.Add("ruta_almacen_pfx");
             campos.Add("ruta_certificado");
-
+            campos.Add("ruta_xml");
+            campos.Add("ruta_pdf");
             return campos;
         }
 
@@ -62,7 +65,8 @@ namespace conexiones_BD.clases
             valores.Add(this.nit);
             valores.Add(this.ruta_almacen_pfx);
             valores.Add(this.ruta_certificado);
-
+            valores.Add(this.ruta_xml);
+            valores.Add(this.ruta_pdf);
             return valores;
         }
 
@@ -96,7 +100,9 @@ namespace conexiones_BD.clases
             sentencia.Append("direccion_local='" + direccion_local + "',");
             sentencia.Append("nit='" + nit + "',");
             sentencia.Append("ruta_almacen_pfx='" + ruta_almacen_pfx + "',");
-            sentencia.Append("ruta_certificado='" + ruta_certificado + "' ");
+            sentencia.Append("ruta_certificado='" + ruta_certificado + "', ");
+            sentencia.Append("ruta_xml='" + ruta_xml + "', ");
+            sentencia.Append("ruta_pdf='" + ruta_pdf + "' ");
             sentencia.Append("where (idempresa='"+idempresa+"');");
 
             operaciones op = new operaciones();

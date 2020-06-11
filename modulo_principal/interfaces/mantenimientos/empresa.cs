@@ -71,6 +71,8 @@ namespace interfaces.mantenimientos
                     txtDireccion.Text = datos.Rows[0][7].ToString();
                     txtPfx.Text = datos.Rows[0][8].ToString().Replace("\\", @"\\");
                     txtCerti.Text = datos.Rows[0][9].ToString().Replace("\\", @"\\");
+                    txtXml.Text = datos.Rows[0][10].ToString().Replace("\\", @"\\");
+                    txtPdf.Text = datos.Rows[0][11].ToString().Replace("\\", @"\\");
 
                     btnGuarda.Text = "Modificar";
                 }
@@ -94,6 +96,8 @@ namespace interfaces.mantenimientos
             text.Add(txtDireccion);
             text.Add(txtCerti);
             text.Add(txtPfx);
+            text.Add(txtXml);
+            text.Add(txtPdf);
 
             return utilitarios.vaciando_formularios.validando(text, error);
         }
@@ -115,7 +119,9 @@ namespace interfaces.mantenimientos
                     txtNit.Text,
                     txtCerti.Text,
                     txtPfx.Text,
-                    false
+                    false,
+                    txtXml.Text,
+                    txtPdf.Text
                     );
                     if (empresa.guardar(true) > 0)
                     {
@@ -136,7 +142,9 @@ namespace interfaces.mantenimientos
                     txtNit.Text,
                     txtCerti.Text,
                     txtPfx.Text,
-                    true
+                    true,
+                    txtXml.Text,
+                    txtPdf.Text
                     );
 
                     if (empresa.actualizando_empresa(idempresa))
@@ -179,6 +187,34 @@ namespace interfaces.mantenimientos
             {
                 txtPfx.Text = buscar_pfx.FileName.Replace("\\", @"\\");
             }
+        }
+
+        private string RutaSelecionada()
+        {
+            //Crear cuadro de seleccionar archivo
+            FolderBrowserDialog Carpeta = new FolderBrowserDialog();
+
+            //verifica si un archivo ha sido selecionado
+            if (Carpeta.ShowDialog() == DialogResult.OK)
+            {
+                //Archivo que hemos seleccionado               
+                return Carpeta.SelectedPath.Replace("\\", @"\\");
+            }
+            else
+            {
+                return "";
+            }
+
+        }
+
+        private void txtBuscar3_Click(object sender, EventArgs e)
+        {
+            txtXml.Text = RutaSelecionada();
+        }
+
+        private void txtBuscar4_Click(object sender, EventArgs e)
+        {
+            txtPdf.Text = RutaSelecionada();
         }
     }
 }

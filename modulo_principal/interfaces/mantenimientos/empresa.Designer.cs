@@ -57,6 +57,12 @@
             this.txtPfx = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.buscar_pfx = new System.Windows.Forms.OpenFileDialog();
+            this.txtBuscar4 = new System.Windows.Forms.Button();
+            this.txtPdf = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtBuscar3 = new System.Windows.Forms.Button();
+            this.txtXml = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.panelTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
@@ -288,7 +294,7 @@
             // 
             this.btnGuarda.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.btnGuarda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuarda.Location = new System.Drawing.Point(169, 439);
+            this.btnGuarda.Location = new System.Drawing.Point(169, 577);
             this.btnGuarda.Margin = new System.Windows.Forms.Padding(4);
             this.btnGuarda.Name = "btnGuarda";
             this.btnGuarda.Size = new System.Drawing.Size(87, 31);
@@ -345,12 +351,88 @@
             // 
             this.buscar_pfx.FileName = "openFileDialog1";
             // 
+            // txtBuscar4
+            // 
+            this.txtBuscar4.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.txtBuscar4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.txtBuscar4.Location = new System.Drawing.Point(370, 529);
+            this.txtBuscar4.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBuscar4.Name = "txtBuscar4";
+            this.txtBuscar4.Size = new System.Drawing.Size(40, 26);
+            this.txtBuscar4.TabIndex = 31;
+            this.txtBuscar4.Text = "...";
+            this.txtBuscar4.UseVisualStyleBackColor = true;
+            this.txtBuscar4.Click += new System.EventHandler(this.txtBuscar4_Click);
+            // 
+            // txtPdf
+            // 
+            this.txtPdf.BackColor = System.Drawing.Color.Silver;
+            this.txtPdf.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPdf.Location = new System.Drawing.Point(22, 529);
+            this.txtPdf.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPdf.Name = "txtPdf";
+            this.txtPdf.ReadOnly = true;
+            this.txtPdf.Size = new System.Drawing.Size(340, 26);
+            this.txtPdf.TabIndex = 29;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Location = new System.Drawing.Point(18, 506);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(253, 19);
+            this.label10.TabIndex = 30;
+            this.label10.Text = "Ruta de almacenamiento de archivos pdf";
+            // 
+            // txtBuscar3
+            // 
+            this.txtBuscar3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.txtBuscar3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.txtBuscar3.Location = new System.Drawing.Point(370, 465);
+            this.txtBuscar3.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBuscar3.Name = "txtBuscar3";
+            this.txtBuscar3.Size = new System.Drawing.Size(40, 26);
+            this.txtBuscar3.TabIndex = 28;
+            this.txtBuscar3.Text = "...";
+            this.txtBuscar3.UseVisualStyleBackColor = true;
+            this.txtBuscar3.Click += new System.EventHandler(this.txtBuscar3_Click);
+            // 
+            // txtXml
+            // 
+            this.txtXml.BackColor = System.Drawing.Color.Silver;
+            this.txtXml.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtXml.Location = new System.Drawing.Point(22, 465);
+            this.txtXml.Margin = new System.Windows.Forms.Padding(4);
+            this.txtXml.Name = "txtXml";
+            this.txtXml.ReadOnly = true;
+            this.txtXml.Size = new System.Drawing.Size(340, 26);
+            this.txtXml.TabIndex = 26;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.Transparent;
+            this.label11.Location = new System.Drawing.Point(18, 442);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(254, 19);
+            this.label11.TabIndex = 27;
+            this.label11.Text = "Ruta de almacenamiento de archivos xml";
+            // 
             // empresa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(434, 495);
+            this.ClientSize = new System.Drawing.Size(434, 621);
+            this.Controls.Add(this.txtBuscar4);
+            this.Controls.Add(this.txtPdf);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.txtBuscar3);
+            this.Controls.Add(this.txtXml);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.btnBuscar2);
             this.Controls.Add(this.txtPfx);
             this.Controls.Add(this.label9);
@@ -379,7 +461,7 @@
             this.Name = "empresa";
             this.Opacity = 0.98D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "empresa";
+            this.Text = "s";
             this.Load += new System.EventHandler(this.empresa_Load);
             this.panelTitulo.ResumeLayout(false);
             this.panelTitulo.PerformLayout();
@@ -419,5 +501,11 @@
         private System.Windows.Forms.TextBox txtPfx;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.OpenFileDialog buscar_pfx;
+        private System.Windows.Forms.Button txtBuscar4;
+        private System.Windows.Forms.TextBox txtPdf;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button txtBuscar3;
+        private System.Windows.Forms.TextBox txtXml;
+        private System.Windows.Forms.Label label11;
     }
 }
