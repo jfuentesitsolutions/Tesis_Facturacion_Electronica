@@ -1,6 +1,4 @@
 ﻿using conexiones_BD.clases;
-using iTextSharp.text.pdf;
-using iTextSharp.text.pdf.security;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -8,6 +6,8 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using iText.Kernel.Pdf;
+using iText.Signatures;
 
 namespace FirmarPDF
 {
@@ -57,7 +57,7 @@ namespace FirmarPDF
                         if (docFirmado == 0 || docFirmado == 1)
                         {
                             return 2;
-                        }
+                        }/*
 
 
                         using (var writer = new FileStream(rutaDocumentoFirmado, FileMode.Create, FileAccess.Write))
@@ -73,7 +73,19 @@ namespace FirmarPDF
                             var standard = CryptoStandard.CADES;
 
                             MakeSignature.SignDetached(signature, signatureKey, signatureChain, null, null, null, 0, standard);
-                        }
+                        }*/
+
+                        //Abrien el documento para y especificando la nueva ruta de guardado
+                        PdfSigner firmar = new PdfSigner(reader, new FileStream(rutaDocumentoFirmado, FileMode.Create), new StampingProperties());
+
+                        PdfSignatureAppearance apariencia = firmar.GetSignatureAppearance();
+                        apariencia.SetReason("Factura firmada para tesis").SetLocation("Sonsonate, El Salvador").SetPageRect(new iText.Kernel.Geom.Rectangle(36, 690, 200, 100)).SetPageNumber(1);
+                        firmar.SetFieldName("Docuento firmado por Jhovany");
+
+
+                        IExternalSignature pks = new PrivateKeySignature(certificado.Key, DigestAlgorithms.SHA256);
+
+                        firmar.SignDetached(pks, certificado.Chain, null, null, null, 0, PdfSigner.CryptoStandard.CADES);
                     }
 
 

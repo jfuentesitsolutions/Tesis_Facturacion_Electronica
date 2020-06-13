@@ -1,4 +1,4 @@
-﻿using iTextSharp.text.pdf;
+﻿
 using Org.BouncyCastle.Security;
 using System;
 using System.Collections.Generic;
@@ -6,6 +6,8 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using iText.Kernel.Pdf;
+using iText.Signatures;
 
 namespace FirmarPDF
 {
@@ -19,15 +21,13 @@ namespace FirmarPDF
         }
 
 
-       
-
         public int ValidarDocumentoPDF(string rutaDocumentoFirmado)
         {
             try
             {
                 bool pdfFirmado =false;
 
-                using (var reader = new PdfReader(rutaDocumentoFirmado))
+                /*using (var reader = new PdfReader(rutaDocumentoFirmado))
                 {
                     var campos = reader.AcroFields;
                     var nombresDefirmas = campos.GetSignatureNames();
@@ -40,7 +40,7 @@ namespace FirmarPDF
                         }
                        
                     }
-                }
+                }*/
 
                 if (pdfFirmado)
                 {
@@ -60,7 +60,7 @@ namespace FirmarPDF
           
         }
 
-        private bool ValidarFirma(AcroFields campos, string nombre)
+        /*private bool ValidarFirma(AcroFields campos, string nombre)
         {
             // Solo se verificará la última revision del documento.
 
@@ -104,7 +104,7 @@ namespace FirmarPDF
             }
 
             return false;
-        }
+        }*/
 
     }
 }
