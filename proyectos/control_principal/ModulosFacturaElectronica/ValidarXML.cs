@@ -18,6 +18,7 @@ namespace control_principal.ModulosFacturaElectronica
         private FirmaElectronica _firma = new FirmaElectronica();
         List<string> listaNomArchivos = new List<string>();
         List<string> listaRutArchivos = new List<string>();
+        DataTable empresa = conexiones_BD.clases.empresa.datos_empresa();
 
         #region DLL para mover la ventana
 
@@ -67,6 +68,7 @@ namespace control_principal.ModulosFacturaElectronica
         {
             //Crear cuadro de seleccionar archivo
             OpenFileDialog Carpeta = new OpenFileDialog();
+            Carpeta.InitialDirectory=empresa.Rows[0][10].ToString();
 
             //verifica si un archivo ha sido selecionado
             if (Carpeta.ShowDialog() == DialogResult.OK)
@@ -96,46 +98,58 @@ namespace control_principal.ModulosFacturaElectronica
 
         private void btnValidar_XML_Click(object sender, EventArgs e)
         {
-           
 
             if (Ruta_XML != null && Ruta_XML != "")
             {
-             
-                switch (_firma.VerificarXML(Ruta_XML)) {
-                    case 0:
-                            _firma.ActulizarDatosDeRutasArchivosXML(Ruta_XML);
-                            CargarDatosFormularios();
-                            MessageBox.Show("El XML es valido, el contenido no ha sufrido cambios", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            break;
-                           
-                    case 1:
-                            MessageBox.Show("La ubicacion del archivo XSLT es incorrecta, o el tipo de archivo seleccionado es incorrecto", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                            break;
-                                   
-                    case 2:
-                            MessageBox.Show("El archivo XML selecionado es incorrecto", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                            break;        
-                           
-                    case 3:
-                            MessageBox.Show("El XML es invalido, su contenido ha sido modificado", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Hand);
-                            break;              
-                        
-                    case 4:
-                            MessageBox.Show("Error al validar el xml", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            break;
-                           
-                    default:
-                            MessageBox.Show("Indice de error invalido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            break;
-                            
-                        
-                }
+                using (espera_datos.splash_espera fe = new espera_datos.splash_espera())
+                {
+                    fe.Funcion_verificar = verificando;
+                    fe.Tipo_operacio = 2;
 
+                    if (fe.ShowDialog() == DialogResult.OK)
+                    {
+                        switch (fe.Numero)
+                        {
+                            case 0:
+                                _firma.ActulizarDatosDeRutasArchivosXML(Ruta_XML);
+                                CargarDatosFormularios();
+                                MessageBox.Show("El XML es valido, el contenido no ha sufrido cambios", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                break;
+
+                            case 1:
+                                MessageBox.Show("La ubicacion del archivo XSLT es incorrecta, o el tipo de archivo seleccionado es incorrecto", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                break;
+
+                            case 2:
+                                MessageBox.Show("El archivo XML selecionado es incorrecto", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                break;
+
+                            case 3:
+                                MessageBox.Show("El XML es invalido, su contenido ha sido modificado", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                                break;
+
+                            case 4:
+                                MessageBox.Show("Error al validar el xml", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                break;
+
+                            default:
+                                MessageBox.Show("Indice de error invalido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                break;
+                        }
+                    }
+
+                }
             }
             else
             {
                 MessageBox.Show("Seleccione un archivo XML", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private int verificando()
+        {
+            int respuesta = _firma.VerificarXML(Ruta_XML);
+            return respuesta;
         }
 
         private void btnBuscar_XML_MouseEnter(object sender, EventArgs e)

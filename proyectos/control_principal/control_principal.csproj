@@ -245,6 +245,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\modulo_principal\espera_datos\espera_datos.csproj">
+      <Project>{0822e6f8-74d5-4526-be21-afdd3dbc6154}</Project>
+      <Name>espera_datos</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\modulo_principal\FirmarPDF\FirmarPDF.csproj">
       <Project>{08df8707-3f2a-4ab8-8cd9-68d5ca7f0db3}</Project>
       <Name>FirmarPDF</Name>

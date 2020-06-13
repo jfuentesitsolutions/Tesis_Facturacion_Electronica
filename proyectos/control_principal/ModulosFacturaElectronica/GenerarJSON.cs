@@ -135,18 +135,26 @@ namespace control_principal.ModulosFacturaElectronica
 
                     if (!System.IO.File.Exists(Ruta_SelectJSON + "\\" + txtNombreJSON.Text + ".json"))
                     {
-                        if (_validarXML.VerificarXML(Ruta_XML, true))
+                        using (espera_datos.splash_espera fe = new espera_datos.splash_espera())
                         {
-                            System.Xml.XmlDocument doc = new System.Xml.XmlDocument();
-                            doc.Load(Ruta_XML);
+                            fe.Validar = generando_json;
+                            fe.Tipo_operacio = 3;
 
-                            string json = JsonConvert.SerializeXmlNode(doc);
+                            if (fe.ShowDialog() == DialogResult.OK)
+                            {
+                                if (fe.Creado)
+                                {
+                                    System.Xml.XmlDocument doc = new System.Xml.XmlDocument();
+                                    doc.Load(Ruta_XML);
 
-                            System.IO.File.WriteAllText(Ruta_SelectJSON + @"\" + txtNombreJSON.Text + ".json", json);
+                                    string json = JsonConvert.SerializeXmlNode(doc);
 
-                            _firma.ActulizarDatosDeRutasArchivosXML(Ruta_XML);
-                            CargarDatosFormularios();
-                            MessageBox.Show("El archivo JSON se genero con exito", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    System.IO.File.WriteAllText(Ruta_SelectJSON + @"\" + txtNombreJSON.Text + ".json", json);
+
+                                    MessageBox.Show("El archivo JSON se genero con exito", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                }
+                            }
+
                         }
                     }
                     else {
@@ -203,6 +211,11 @@ namespace control_principal.ModulosFacturaElectronica
 
         }
 
+        private bool generando_json()
+        {
+            GenerarXMLtoPDF _validarXML = new GenerarXMLtoPDF();
+            return _validarXML.VerificarXML(Ruta_XML, true);
+        }
         private void btnBuscar_XML_MouseEnter(object sender, EventArgs e)
         {
             this.btnBuscar_XML.Image = global::control_principal.Properties.Resources.folder22;

@@ -23,6 +23,7 @@ namespace control_principal.ModulosFacturaElectronica
         private FirmaElectronica _firma = new FirmaElectronica();
         List<string> listaNomArchivos = new List<string>();
         List<string> listaRutArchivos = new List<string>();
+        ValidarCertificado certificado = null;
 
         #region DLL para mover la ventana
 
@@ -112,16 +113,23 @@ namespace control_principal.ModulosFacturaElectronica
                     {
                         int documentoValido = -1;
                         string rutaPfx = DatosCertificados.Rows[0][8].ToString();//obtiene la ruta del almacen pfx
-                        var certificado = new ValidarCertificado(rutaPfx, txtContraPFX.Text);//obtiene la informacion del certificado que se encuentra dentro del pfx
+                        certificado = new ValidarCertificado(rutaPfx, txtContraPFX.Text);//obtiene la informacion del certificado que se encuentra dentro del pfx
                         int indicePfxVal = certificado.Validar_AlmacenPFX();//verifica que el archivo pfx sea correcto y su contraseña
-                        var validarPDF = new ValidacionPDF(certificado);
-
 
                         //verificamos si hay algun error en la validacion del pfx
                         switch (indicePfxVal)
                         {
                             case 0:
-                                documentoValido = validarPDF.ValidarDocumentoPDF(@Ruta_PDF); //validamos el pdf y obtenemos un indice de verificacion
+                                using (espera_datos.splash_espera fe = new espera_datos.splash_espera())
+                                {
+                                    fe.Funcion_verificar = valida_el_pdf;
+                                    fe.Tipo_operacio = 2;
+
+                                    if (fe.ShowDialog() == DialogResult.OK)
+                                    {
+                                        documentoValido = fe.Numero;
+                                    }
+                                }
                                 break;
                             case 1:
                                 documentoValido = 4;
@@ -187,14 +195,20 @@ namespace control_principal.ModulosFacturaElectronica
 
         }
 
+        private int valida_el_pdf()
+        {
+            var validarPDF = new ValidacionPDF(certificado);
+            return validarPDF.ValidarDocumentoPDF(@Ruta_PDF);
+
+        }
+
         private void btnVisibilidadPass_Click(object sender, EventArgs e)
         {
            
             if (txtContraPFX.PasswordChar.Equals('●'))
             {
                 visible = true;
-                txtContraPFX.PasswordChar = '\0';
-                
+                txtContraPFX.PasswordChar = '\0';    
             }
             else {
                 visible = false;

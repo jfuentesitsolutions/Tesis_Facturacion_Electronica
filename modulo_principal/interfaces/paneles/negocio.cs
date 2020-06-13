@@ -35,7 +35,7 @@ namespace interfaces.paneles
                 if (fe.ShowDialog() == DialogResult.OK)
                 {
                     productos.precios_productos cp = new productos.precios_productos();
-                    cp.Productos = fe.Funcion()[0];
+                    cp.Productos = fe.Datos;
                     cp.ShowDialog();
                 }
                 else

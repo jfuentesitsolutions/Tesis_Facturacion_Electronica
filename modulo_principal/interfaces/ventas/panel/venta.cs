@@ -1519,10 +1519,10 @@ namespace interfaces.ventas.panel
                     fe.Tipo_operacio = 1;
                     if (fe.ShowDialog() == DialogResult.OK)
                     {
-                        return true;
+                        return fe.Creado;
                     }else
                     {
-                        return false;
+                        return fe.Creado;
                     }
                 }
             }
@@ -1534,11 +1534,11 @@ namespace interfaces.ventas.panel
                     fe.Tipo_operacio = 1;
                     if (fe.ShowDialog() == DialogResult.OK)
                     {
-                        return true;
+                        return fe.Creado;
                     }
                     else
                     {
-                        return false;
+                        return fe.Creado;
                     }
                 }
             }

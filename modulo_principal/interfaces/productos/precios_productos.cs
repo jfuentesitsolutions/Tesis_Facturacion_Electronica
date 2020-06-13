@@ -116,7 +116,7 @@ namespace interfaces.productos
 
                     if (fe.ShowDialog() == DialogResult.OK)
                     {
-                        List<DataTable> listas = fe.Funcion();
+                        List<DataTable> listas = fe.Datos_varios;
                         producto pr = new producto();
 
                         pr.txtCodigo.Text = tablad.CurrentRow.Cells[1].Value.ToString();
@@ -168,7 +168,7 @@ namespace interfaces.productos
 
                                 if (es.ShowDialog() == DialogResult.OK)
                                 {
-                                    productos = es.Productos();
+                                    productos = es.Datos;
                                     cargarTablas();
                                     txtBusqueda.Focus();
                                 }

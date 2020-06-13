@@ -122,46 +122,63 @@ namespace control_principal.ModulosFacturaElectronica
                     {
                         if (Ruta_guardarPDFirmado != null && Ruta_guardarPDFirmado != "")
                         {
-                            Firmante firmante = new Firmante();
-
-                            int indice = firmante.Firmar(Ruta_PDF, Ruta_guardarPDFirmado + "\\Firmado(#)-" + NombrePDFSelecionado(Ruta_PDF), false, txtContraPFX.Text);
-
-                            if (indice == 3)
+                            using (espera_datos.splash_espera fe = new espera_datos.splash_espera())
                             {
-                                DialogResult _result = MessageBox.Show("Ya existe una copia firmada del PDF seleccionado, ¿Desea sobrescribir la copia firmada?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+                                fe.Funcion_verificar = firmar;
+                                fe.Tipo_operacio = 2;
 
-                                if (_result.Equals(DialogResult.Yes))
+                                if (fe.ShowDialog() == DialogResult.OK)
                                 {
-                                    indice = firmante.Firmar(Ruta_PDF, Ruta_guardarPDFirmado + "\\Firmado(#)-" + NombrePDFSelecionado(Ruta_PDF), true, txtContraPFX.Text);
-                                }
-                            }
+                                    int indice = fe.Numero;
 
-                            switch (indice)
-                            {
-                                case 0:
-                                    MessageBox.Show("El archivo PDF fue firmado exitosamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                    break;
-                                case 1:
-                                    MessageBox.Show("El archivo selecionado no es un archivo PDF", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                                    break;
-                                case 2:
-                                    MessageBox.Show("El archivo PDF seleccionado ya esta firmado, seleccione un archivo PDF que no este firmado", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                                    break;
-                                case 3:
-                                    //este caso solo sirve como metodo de escape
-                                    break;
-                                case 4:
-                                    MessageBox.Show("La ruta del almacenamiento PFX es nula, revise en configuraciones si ha selecionado una ruta para el PFX", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                                    break;
-                                case 5:
-                                    MessageBox.Show("La ruta del pfx es incorrecta o el archivo es incorrecto, verificar en configuraciones opcion (empresa)", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                                    break;
-                                case 6:
-                                    MessageBox.Show("La contraseña del almacen PFX es incorrecta", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                                    break;
-                                default:
-                                    MessageBox.Show("Indice de error invalido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                    break;
+                                    if (indice == 3)
+                                    {
+                                        DialogResult _result = MessageBox.Show("Ya existe una copia firmada del PDF seleccionado, ¿Desea sobrescribir la copia firmada?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+
+                                        if (_result.Equals(DialogResult.Yes))
+                                        {
+                                            using (espera_datos.splash_espera fe2 = new espera_datos.splash_espera())
+                                            {
+                                                //fe2.Funcion_verificar = firmar;
+                                                fe2.Tipo_operacio = 2;
+
+                                                if (fe2.ShowDialog() == DialogResult.OK)
+                                                {
+                                                    indice = fe2.Numero;
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    switch (indice)
+                                    {
+                                        case 0:
+                                            MessageBox.Show("El archivo PDF fue firmado exitosamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                            break;
+                                        case 1:
+                                            MessageBox.Show("El archivo selecionado no es un archivo PDF", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                            break;
+                                        case 2:
+                                            MessageBox.Show("El archivo PDF seleccionado ya esta firmado, seleccione un archivo PDF que no este firmado", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                            break;
+                                        case 3:
+                                            //este caso solo sirve como metodo de escape
+                                            break;
+                                        case 4:
+                                            MessageBox.Show("La ruta del almacenamiento PFX es nula, revise en configuraciones si ha selecionado una ruta para el PFX", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                            break;
+                                        case 5:
+                                            MessageBox.Show("La ruta del pfx es incorrecta o el archivo es incorrecto, verificar en configuraciones opcion (empresa)", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                            break;
+                                        case 6:
+                                            MessageBox.Show("La contraseña del almacen PFX es incorrecta", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                            break;
+                                        default:
+                                            MessageBox.Show("Indice de error invalido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                            break;
+                                    }
+
+                                }
                             }
 
                         }
@@ -192,6 +209,12 @@ namespace control_principal.ModulosFacturaElectronica
                 MessageBox.Show("Error al firmarce el PDF", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
+        }
+
+        private int firmar()
+        {
+            Firmante firmante = new Firmante();
+            return firmante.Firmar(Ruta_PDF, Ruta_guardarPDFirmado + "\\Firmado(#)-" + NombrePDFSelecionado(Ruta_PDF), false, txtContraPFX.Text);
         }
 
         private void btnBuscar_PDF_MouseEnter(object sender, EventArgs e)

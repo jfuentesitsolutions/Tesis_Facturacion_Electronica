@@ -46,6 +46,7 @@ namespace espera_datos
                 productos = value;
             }
         }
+        DataTable datos;
 
         public bool Retorno
         {
@@ -60,19 +61,34 @@ namespace espera_datos
             }
         }
 
+        public DataTable Datos { get => datos; set => datos = value; }
+
         private void carga_tablas_Shown(object sender, EventArgs e)
         {
             if (retorno)
             {
-                Task.Factory.StartNew(Productos).ContinueWith((t) => taskCompleted());
+                Task.Factory.StartNew(Productos).ContinueWith((t) => taskCompleted(t.Result));
             }else
             {
-                Task.Factory.StartNew(accion).ContinueWith((t) => taskCompleted());
+                Task.Factory.StartNew(accion).ContinueWith((t) => taskCompleted1());
             }
             
         }
 
-        private void taskCompleted()
+        private void taskCompleted(DataTable p)
+        {
+            if (InvokeRequired)
+            {
+                this.Invoke((MethodInvoker)(() =>
+                {
+                    datos = p;
+                    Close();
+                    DialogResult = DialogResult.OK;
+                }));
+            }
+        }
+
+        private void taskCompleted1()
         {
             if (InvokeRequired)
             {
