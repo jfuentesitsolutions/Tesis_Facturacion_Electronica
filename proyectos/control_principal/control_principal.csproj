@@ -110,6 +110,12 @@
       <DependentUpon>login.cs</DependentUpon>
     </Compile>
     <Compile Include="manejadorVentanas.cs" />
+    <Compile Include="ModulosFacturaElectronica\EnviarDocumentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModulosFacturaElectronica\EnviarDocumentos.Designer.cs">
+      <DependentUpon>EnviarDocumentos.cs</DependentUpon>
+    </Compile>
     <Compile Include="ModulosFacturaElectronica\FirmarPDF.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -189,6 +195,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="login.resx">
       <DependentUpon>login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModulosFacturaElectronica\EnviarDocumentos.resx">
+      <DependentUpon>EnviarDocumentos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ModulosFacturaElectronica\FirmarPDF.resx">
       <DependentUpon>FirmarPDF.cs</DependentUpon>
@@ -459,6 +468,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\visible2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\email %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\enviar2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\enviar1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

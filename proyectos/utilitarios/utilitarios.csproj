@@ -71,6 +71,7 @@
     <Compile Include="conectar_excel.cs" />
     <Compile Include="convertir_letra.cs" />
     <Compile Include="crearSentencia.cs" />
+    <Compile Include="envio_correo.cs" />
     <Compile Include="manejandoCadenas.cs" />
     <Compile Include="maneja_fechas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

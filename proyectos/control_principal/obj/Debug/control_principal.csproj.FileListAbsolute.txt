@@ -284,3 +284,4 @@ L:\Tesis_Facturacion\Tesis_Facturacion_Electronica\proyectos\control_principal\b
 L:\Tesis_Facturacion\Tesis_Facturacion_Electronica\proyectos\control_principal\bin\Debug\Common.Logging.xml
 L:\Tesis_Facturacion\Tesis_Facturacion_Electronica\proyectos\control_principal\bin\Debug\itext.forms.xml
 L:\Tesis_Facturacion\Tesis_Facturacion_Electronica\proyectos\control_principal\bin\Debug\itext.pdfa.xml
+L:\Tesis_Facturacion\Tesis_Facturacion_Electronica\proyectos\control_principal\obj\Debug\control_principal.ModulosFacturaElectronica.EnviarDocumentos.resources
