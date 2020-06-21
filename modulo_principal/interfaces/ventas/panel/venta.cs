@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FirmarPDF;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -1262,6 +1263,15 @@ namespace interfaces.ventas.panel
             }
         }
 
+        private string Ruta_XML, txtNombrePDF, Ruta_SelectPDF;
+        private int verificando()
+        {
+            GenerarXMLtoPDF _generarPDF = new GenerarXMLtoPDF(Ruta_XML, txtNombrePDF, Ruta_SelectPDF);
+            _generarPDF.Ima = Properties.Resources.logo2;
+            return _generarPDF.CrearPDF();
+        }
+
+        DataTable empresa = conexiones_BD.clases.empresa.datos_empresa();
         private void generando_factura_electronica(conexiones_BD.clases.ventas.facturas factura, string tipo, conexiones_BD.clases.entidad en)
         {
             auxiliares.validacion_firma valida = new auxiliares.validacion_firma();
@@ -1273,15 +1283,21 @@ namespace interfaces.ventas.panel
                 {
                     case 0:
                         {
-                            guarda_xml.InitialDirectory = @"C:\";
+                            //cuadro de dialogo para guardar el archivo
+                            guarda_xml.InitialDirectory = empresa.Rows[0][10].ToString();
                             guarda_xml.Title = "Guardar archivo factura electronica";
                             guarda_xml.DefaultExt = "xml";
                             guarda_xml.Filter = "Text files (*.xml)|*.xml|All files (*.*)|*.*";
                             guarda_xml.FileName = factura.Numero_factura;
-                            if (guarda_xml.ShowDialog() == DialogResult.OK)
-                            {
+                            string rutaxml = empresa.Rows[0][10].ToString() + "\\" + factura.Numero_factura + ".xml";
+
+                            //if (guarda_xml.ShowDialog() == DialogResult.OK)
+                            //{
                                 cryptografia.crear_xml fact = new cryptografia.crear_xml(lista[0], factura,
-                                            retornoProductos_factura(), guarda_xml.FileName, valida.txtContrase.Text);
+                                            retornoProductos_factura(),rutaxml , valida.txtContrase.Text);
+                                Ruta_XML = rutaxml;
+                                txtNombrePDF = factura.Numero_factura;
+                                Ruta_SelectPDF = empresa.Rows[0][11].ToString()+"\\";
 
                                 if (creando_xml_json(true, fact))
                                 {
@@ -1295,12 +1311,72 @@ namespace interfaces.ventas.panel
                                                 Int32 res = err.Res;
                                                 if (res > 0)
                                                 {
-                                                    MessageBox.Show("La factura se genero en formato xml con exíto", "Factura generada", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                                    limpiarTodo();
+                                                    if (MessageBox.Show("La factura se genero en formato xml con exíto\n¿Desea enviarla por correo al cliente?", "Factura generada con exíto", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                                                    {
+                                                        using (espera_datos.splash_espera fe = new espera_datos.splash_espera())
+                                                        {
+                                                            fe.Funcion_verificar = verificando;
+                                                            fe.Tipo_operacio = 2;
+
+                                                            if (fe.ShowDialog() == DialogResult.OK)
+                                                            {
+                                                                switch (fe.Numero)
+                                                                {
+                                                                    case 0:
+                                                                        //Envio del pdf al correo
+                                                                        correo.envio correo = new correo.envio();
+                                                                        //correo.txtCorreo.Text = tabla_clientes.SelectedRows[7].ToString();
+                                                                        correo.Ruta_xml = Ruta_XML;
+                                                                        correo.Ruta_pdf = Ruta_SelectPDF + "Firmado(#)-" + txtNombrePDF+".pdf";
+                                                                        correo.ShowDialog();
+                                                                        if (correo.Enviado)
+                                                                        {
+                                                                            MessageBox.Show("Enviado con exíto");
+                                                                            limpiarTodo();
+                                                                        }
+                                                                        else
+                                                                        {
+                                                                            limpiarTodo();
+                                                                        }
+                                                                        break;
+
+                                                                    case 1:
+                                                                        MessageBox.Show("Error al crear el PDF", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                                                                        break;
+                                                                    case 2:
+                                                                        MessageBox.Show("El archivo xml que selecciono es incorrecto", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                                                        break;
+
+                                                                    case 3:
+
+                                                                        break;
+
+                                                                    case 4:
+                                                                        /*este caso solo es de salida */
+                                                                        break;
+                                                                    case 5:
+                                                                        MessageBox.Show("El archivo XML ha sido corrompido y falló en la validación", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                                                        break;
+
+                                                                    case 6:
+                                                                        MessageBox.Show("Ocurrio un error en la creacion del codigo QR", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                                                        break;
+
+                                                                    default:
+                                                                        MessageBox.Show("Indice de error invalido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                                                        break;
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                    else
+                                                    {
+                                                        limpiarTodo();
+                                                    }
                                                 }
                                                 else
                                                 {
-                                                    File.Delete(guarda_xml.FileName);
+                                                    File.Delete(rutaxml);
                                                     MessageBox.Show("No se pudo guardar la factura", "No se pudo guardar", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                                 }
                                                 break;
@@ -1317,19 +1393,72 @@ namespace interfaces.ventas.panel
                                                 Int32 res = err.Res;
                                                 if (res > 0)
                                                 {
-                                                    if (op.insertar2(ta.sentenciaIngresar()) > 0)
+                                                    if (MessageBox.Show("La factura se genero en formato xml con exíto\n¿Desea enviarla por correo al cliente?", "Factura generada con exíto", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                                                     {
-                                                        MessageBox.Show("La factura se genero en formato xml con exíto", "Factura generada", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                                        limpiarTodo();
+                                                        using (espera_datos.splash_espera fe = new espera_datos.splash_espera())
+                                                        {
+                                                            fe.Funcion_verificar = verificando;
+                                                            fe.Tipo_operacio = 2;
+
+                                                            if (fe.ShowDialog() == DialogResult.OK)
+                                                            {
+                                                                switch (fe.Numero)
+                                                                {
+                                                                    case 0:
+                                                                        //Envio del pdf al correo
+                                                                        correo.envio correo = new correo.envio();
+                                                                        //correo.txtCorreo.Text = tabla_clientes.SelectedRows[7].ToString();
+                                                                        correo.Ruta_xml = Ruta_XML;
+                                                                        correo.Ruta_pdf = Ruta_SelectPDF + "Firmado(#)-" + txtNombrePDF + ".pdf";
+                                                                        correo.ShowDialog();
+                                                                        if (correo.Enviado)
+                                                                        {
+                                                                            MessageBox.Show("Enviado con exíto");
+                                                                        limpiarTodo();
+                                                                        }
+                                                                        else
+                                                                        {
+                                                                            limpiarTodo();
+                                                                        }
+                                                                        break;
+
+                                                                    case 1:
+                                                                        MessageBox.Show("Error al crear el PDF", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                                                                        break;
+                                                                    case 2:
+                                                                        MessageBox.Show("El archivo xml que selecciono es incorrecto", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                                                        break;
+
+                                                                    case 3:
+
+                                                                        break;
+
+                                                                    case 4:
+                                                                        /*este caso solo es de salida */
+                                                                        break;
+                                                                    case 5:
+                                                                        MessageBox.Show("El archivo XML ha sido corrompido y falló en la validación", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                                                        break;
+
+                                                                    case 6:
+                                                                        MessageBox.Show("Ocurrio un error en la creacion del codigo QR", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                                                        break;
+
+                                                                    default:
+                                                                        MessageBox.Show("Indice de error invalido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                                                        break;
+                                                                }
+                                                            }
+                                                        }
                                                     }
                                                     else
                                                     {
-                                                        MessageBox.Show("No se pudo guardar la factura", "No se pudo guardar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                                        limpiarTodo();
                                                     }
                                                 }
                                                 else
                                                 {
-                                                    File.Delete(guarda_xml.FileName);
+                                                    File.Delete(rutaxml);
                                                     MessageBox.Show("No se pudo guardar la factura", "No se pudo guardar", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                                 }
                                                 break;
@@ -1346,19 +1475,73 @@ namespace interfaces.ventas.panel
                                                 Int32 res = err.Res;
                                                 if (res > 0)
                                                 {
-                                                    if (op.insertar2(ta.sentenciaIngresar())>0)
+                                                    if (MessageBox.Show("La factura se genero en formato xml con exíto\n¿Desea enviarla por correo al cliente?", "Factura generada con exíto", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                                                     {
-                                                        MessageBox.Show("La factura se genero en formato xml con exíto", "Factura generada", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                                        limpiarTodo();
-                                                    } else
-                                                    {
-                                                        MessageBox.Show("No se pudo guardar la factura", "No se pudo guardar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                                        using (espera_datos.splash_espera fe = new espera_datos.splash_espera())
+                                                        {
+                                                            fe.Funcion_verificar = verificando;
+                                                            fe.Tipo_operacio = 2;
+
+                                                            if (fe.ShowDialog() == DialogResult.OK)
+                                                            {
+                                                                switch (fe.Numero)
+                                                                {
+                                                                    case 0:
+                                                                        //Envio del pdf al correo
+                                                                        correo.envio correo = new correo.envio();
+                                                                        //correo.txtCorreo.Text = tabla_clientes.SelectedRows[7].ToString();
+                                                                        correo.Ruta_xml = Ruta_XML;
+                                                                        correo.Ruta_pdf = Ruta_SelectPDF + "Firmado(#)-" + txtNombrePDF + ".pdf";
+                                                                        correo.ShowDialog();
+                                                                        if (correo.Enviado)
+                                                                        {
+                                                                            MessageBox.Show("Enviado con exíto");
+                                                                        limpiarTodo();
+                                                                        }
+                                                                        else
+                                                                        {
+                                                                            limpiarTodo();
+                                                                        }
+                                                                        break;
+
+                                                                    case 1:
+                                                                        MessageBox.Show("Error al crear el PDF", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                                                                        break;
+                                                                    case 2:
+                                                                        MessageBox.Show("El archivo xml que selecciono es incorrecto", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                                                        break;
+
+                                                                    case 3:
+
+                                                                        break;
+
+                                                                    case 4:
+                                                                        /*este caso solo es de salida */
+                                                                        break;
+                                                                    case 5:
+                                                                        MessageBox.Show("El archivo XML ha sido corrompido y falló en la validación", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                                                        break;
+
+                                                                    case 6:
+                                                                        MessageBox.Show("Ocurrio un error en la creacion del codigo QR", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                                                        break;
+
+                                                                    default:
+                                                                        MessageBox.Show("Indice de error invalido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                                                        break;
+                                                                }
+                                                            }
+                                                        }
                                                     }
-                                                    
+                                                    else
+                                                    {
+                                                        limpiarTodo();
+                                                    }
+
                                                 }
                                                 else
                                                 {
-                                                    File.Delete(guarda_xml.FileName);
+                                                    File.Delete(rutaxml);
                                                     MessageBox.Show("No se pudo guardar la factura", "No se pudo guardar", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                                 }
                                                 break;
@@ -1371,22 +1554,26 @@ namespace interfaces.ventas.panel
                                 {
                                     MessageBox.Show("La contraseña no coincide o el archivo de contenedor del certificado esta dañado", "Error al abrir el almacen", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 }
-                            }
+                            //}
                             break;
                         }
                     case 1:
                         {
                             //Guardando json
-                            guarda_xml.InitialDirectory = @"C:\";
+                            guarda_xml.InitialDirectory = empresa.Rows[0][10].ToString();
                             guarda_xml.Title = "Guardar archivo json";
                             guarda_xml.DefaultExt = "json";
                             guarda_xml.Filter = "Text files (*.json)|*.json|All files (*.*)|*.*";
                             guarda_xml.FileName = factura.Numero_factura;
-                            if (guarda_xml.ShowDialog() == DialogResult.OK)
-                            {
+                            string rutajson = empresa.Rows[0][10].ToString() + "\\" + factura.Numero_factura + ".json";
+                            //if (guarda_xml.ShowDialog() == DialogResult.OK)
+                            //{
                                 string ruta= Path.GetFullPath("xmlTemporal.xml");
                                 cryptografia.crear_xml fact = new cryptografia.crear_xml(lista[0], factura,
                                             retornoProductos_factura(), ruta, valida.txtContrase.Text);
+                                Ruta_XML = ruta;
+                                txtNombrePDF = factura.Numero_factura;
+                                Ruta_SelectPDF = empresa.Rows[0][11].ToString() + "\\";
 
                                 if (creando_xml_json(false, fact))
                                 {
@@ -1400,10 +1587,71 @@ namespace interfaces.ventas.panel
                                                 Int32 res = err.Res;
                                                 if (res > 0)
                                                 {
-                                                    if(fact.creando_json(ruta, guarda_xml.FileName))
+                                                    if(fact.creando_json(ruta, rutajson))
                                                     {
-                                                        MessageBox.Show("La factura se genero en formato json con exíto", "Json generado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                                        limpiarTodo();
+                                                        if (MessageBox.Show("La factura se genero en formato json con exíto\n¿Desea enviarla por correo al cliente?", "Factura generada con exíto", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                                                        {
+                                                            using (espera_datos.splash_espera fe = new espera_datos.splash_espera())
+                                                            {
+                                                                fe.Funcion_verificar = verificando;
+                                                                fe.Tipo_operacio = 2;
+
+                                                                if (fe.ShowDialog() == DialogResult.OK)
+                                                                {
+                                                                    switch (fe.Numero)
+                                                                    {
+                                                                        case 0:
+                                                                            //Envio del pdf al correo
+                                                                            correo.envio correo = new correo.envio();
+                                                                            //correo.txtCorreo.Text = tabla_clientes.SelectedRows[7].ToString();
+                                                                            correo.Ruta_xml = rutajson;
+                                                                            correo.Ruta_pdf = Ruta_SelectPDF + "Firmado(#)-" + txtNombrePDF + ".pdf";
+                                                                            correo.ShowDialog();
+                                                                            if (correo.Enviado)
+                                                                            {
+                                                                                MessageBox.Show("Enviado con exíto");
+                                                                                File.Delete(ruta);
+                                                                            limpiarTodo();
+                                                                            }
+                                                                            else
+                                                                            {
+                                                                                limpiarTodo();
+                                                                            }
+                                                                            break;
+
+                                                                        case 1:
+                                                                            MessageBox.Show("Error al crear el PDF", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                                                                            break;
+                                                                        case 2:
+                                                                            MessageBox.Show("El archivo xml que selecciono es incorrecto", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                                                            break;
+
+                                                                        case 3:
+
+                                                                            break;
+
+                                                                        case 4:
+                                                                            /*este caso solo es de salida */
+                                                                            break;
+                                                                        case 5:
+                                                                            MessageBox.Show("El archivo XML ha sido corrompido y falló en la validación", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                                                            break;
+
+                                                                        case 6:
+                                                                            MessageBox.Show("Ocurrio un error en la creacion del codigo QR", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                                                            break;
+
+                                                                        default:
+                                                                            MessageBox.Show("Indice de error invalido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                                                            break;
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                        else
+                                                        {
+                                                            limpiarTodo();
+                                                        }
                                                     }
                                                     else
                                                     {
@@ -1432,10 +1680,71 @@ namespace interfaces.ventas.panel
                                                 {
                                                     if (op.insertar2(ta.sentenciaIngresar()) > 0)
                                                     {
-                                                        if (fact.creando_json(ruta, guarda_xml.FileName))
+                                                        if (fact.creando_json(ruta, rutajson))
                                                         {
-                                                            MessageBox.Show("La factura se genero en formato json con exíto", "Json generado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                                            limpiarTodo();
+                                                            if (MessageBox.Show("La factura se genero en formato json con exíto\n¿Desea enviarla por correo al cliente?", "Factura generada con exíto", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                                                            {
+                                                                using (espera_datos.splash_espera fe = new espera_datos.splash_espera())
+                                                                {
+                                                                    fe.Funcion_verificar = verificando;
+                                                                    fe.Tipo_operacio = 2;
+
+                                                                    if (fe.ShowDialog() == DialogResult.OK)
+                                                                    {
+                                                                        switch (fe.Numero)
+                                                                        {
+                                                                            case 0:
+                                                                                //Envio del pdf al correo
+                                                                                correo.envio correo = new correo.envio();
+                                                                                //correo.txtCorreo.Text = tabla_clientes.SelectedRows[7].ToString();
+                                                                                correo.Ruta_xml = rutajson;
+                                                                                correo.Ruta_pdf = Ruta_SelectPDF + "Firmado(#)-" + txtNombrePDF + ".pdf";
+                                                                                correo.ShowDialog();
+                                                                                if (correo.Enviado)
+                                                                                {
+                                                                                    MessageBox.Show("Enviado con exíto");
+                                                                                File.Delete(ruta);
+                                                                                    limpiarTodo();
+                                                                                }
+                                                                                else
+                                                                                {
+                                                                                    limpiarTodo();
+                                                                                }
+                                                                                break;
+
+                                                                            case 1:
+                                                                                MessageBox.Show("Error al crear el PDF", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                                                                                break;
+                                                                            case 2:
+                                                                                MessageBox.Show("El archivo xml que selecciono es incorrecto", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                                                                break;
+
+                                                                            case 3:
+
+                                                                                break;
+
+                                                                            case 4:
+                                                                                /*este caso solo es de salida */
+                                                                                break;
+                                                                            case 5:
+                                                                                MessageBox.Show("El archivo XML ha sido corrompido y falló en la validación", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                                                                break;
+
+                                                                            case 6:
+                                                                                MessageBox.Show("Ocurrio un error en la creacion del codigo QR", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                                                                break;
+
+                                                                            default:
+                                                                                MessageBox.Show("Indice de error invalido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                                                                break;
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                            else
+                                                            {
+                                                                limpiarTodo();
+                                                            }
                                                         }
                                                         else
                                                         {
@@ -1468,10 +1777,71 @@ namespace interfaces.ventas.panel
                                                 {
                                                     if (op.insertar2(ta.sentenciaIngresar()) > 0)
                                                     {
-                                                        if (fact.creando_json(ruta, guarda_xml.FileName))
+                                                        if (fact.creando_json(ruta, rutajson))
                                                         {
-                                                            MessageBox.Show("La factura se genero en formato json con exíto", "Json generado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                                            limpiarTodo();
+                                                            if (MessageBox.Show("La factura se genero en formato json con exíto\n¿Desea enviarla por correo al cliente?", "Factura generada con exíto", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                                                            {
+                                                                using (espera_datos.splash_espera fe = new espera_datos.splash_espera())
+                                                                {
+                                                                    fe.Funcion_verificar = verificando;
+                                                                    fe.Tipo_operacio = 2;
+
+                                                                    if (fe.ShowDialog() == DialogResult.OK)
+                                                                    {
+                                                                        switch (fe.Numero)
+                                                                        {
+                                                                            case 0:
+                                                                                //Envio del pdf al correo
+                                                                                correo.envio correo = new correo.envio();
+                                                                                //correo.txtCorreo.Text = tabla_clientes.SelectedRows[7].ToString();
+                                                                                correo.Ruta_xml = rutajson;
+                                                                                correo.Ruta_pdf = Ruta_SelectPDF + "Firmado(#)-" + txtNombrePDF + ".pdf";
+                                                                                correo.ShowDialog();
+                                                                                if (correo.Enviado)
+                                                                                {
+                                                                                    MessageBox.Show("Enviado con exíto");
+                                                                                File.Delete(ruta);
+                                                                                    limpiarTodo();
+                                                                                }
+                                                                                else
+                                                                                {
+                                                                                    limpiarTodo();
+                                                                                }
+                                                                                break;
+
+                                                                            case 1:
+                                                                                MessageBox.Show("Error al crear el PDF", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                                                                                break;
+                                                                            case 2:
+                                                                                MessageBox.Show("El archivo xml que selecciono es incorrecto", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                                                                break;
+
+                                                                            case 3:
+
+                                                                                break;
+
+                                                                            case 4:
+                                                                                /*este caso solo es de salida */
+                                                                                break;
+                                                                            case 5:
+                                                                                MessageBox.Show("El archivo XML ha sido corrompido y falló en la validación", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                                                                break;
+
+                                                                            case 6:
+                                                                                MessageBox.Show("Ocurrio un error en la creacion del codigo QR", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                                                                break;
+
+                                                                            default:
+                                                                                MessageBox.Show("Indice de error invalido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                                                                break;
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                            else
+                                                            {
+                                                                limpiarTodo();
+                                                            }
                                                         }
                                                         else
                                                         {
@@ -1499,7 +1869,7 @@ namespace interfaces.ventas.panel
                                 {
                                     MessageBox.Show("La contraseña no coincide o el archivo de contenedor del certificado esta dañado", "Error al abrir el almacen", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 }
-                            }
+                            //}
                             break;
                         }
                 }

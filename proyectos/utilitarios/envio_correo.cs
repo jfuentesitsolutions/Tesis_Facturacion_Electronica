@@ -35,6 +35,10 @@ namespace utilitarios
             {
                 correo.Attachments.Add(new Attachment(ruta_pdf));
             }
+            else
+            {
+                Console.WriteLine("No se encontro");
+            }
 
             this.remitente = new MailAddress("vfjhovanyitsolutions@gmail.com");
             correo.From = remitente;

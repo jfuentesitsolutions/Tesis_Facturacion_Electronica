@@ -36,11 +36,12 @@ namespace control_principal.ModulosFacturaElectronica
            
         }
 
-
+        DataTable empres = conexiones_BD.clases.empresa.datos_empresa();
         private string BuscarRutaDocumento()
         {
             //Crear cuadro de seleccionar archivo
             OpenFileDialog Carpeta = new OpenFileDialog();
+            Carpeta.InitialDirectory = empres.Rows[0][11].ToString();
 
             //verifica si un archivo ha sido selecionado
             if (Carpeta.ShowDialog() == DialogResult.OK)

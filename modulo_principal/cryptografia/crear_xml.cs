@@ -29,7 +29,7 @@ namespace cryptografia
         private string directorio;
         private string contra;
 
-        public crear_xml(string idcliente, facturas fact, List<detalles_productos_venta_factura> items, 
+        public crear_xml(string idcliente, facturas fact, List<detalles_productos_venta_factura> items,
             string ruta_xml, string contra)
         {
             this.cliente = clientes.clienteXid(idcliente);
@@ -40,7 +40,7 @@ namespace cryptografia
             this.resolucion = resoluciones.datos_resolucion_activa();
             this.directorio = ruta_xml;
             this.contra = contra;
-            
+
         }
 
         public crear_xml()
@@ -50,7 +50,7 @@ namespace cryptografia
 
         private void creandoFacturaXml()
         {
-            
+
             factura_xml.Version = factura.Version;
             factura_xml.NumFactura = factura.Num_factura_numero;
             factura_xml.CorrInicio = sesion.Serie + sesion.Serie_inicio;
@@ -71,9 +71,12 @@ namespace cryptografia
             factura_xml.MetodoPagoSpecified = true;
             factura_xml.LugarExpedicion = factura.Lugar_expedicion;
             factura_xml.Cantidad_letras = factura.Cantidad_letras;
+            //empieza la empresa
             factura_xml.Emisor = empre();
+            //empieza el cliente
             factura_xml.Receptor = client();
             factura_xml.Conceptos = item().ToArray();
+            //empieza los clientes
             factura_xml.Impuestos = impuestos();
             if (Convert.ToDouble(factura.Total) > 200)
             {
@@ -122,11 +125,12 @@ namespace cryptografia
                     listo.Add(true);
                 }
                 return listo;
-            }else
+            }
+            else
             {
                 listo.Add(false);
                 return listo;
-            }  
+            }
         }
 
         public bool creando_json(string directorio_xml, string directorio_json)
@@ -135,7 +139,7 @@ namespace cryptografia
             {
                 XmlDocument doc = new XmlDocument();
                 doc.Load(directorio_xml);
-                File.Delete(directorio_xml);
+                //File.Delete(directorio_xml);
                 string json = JsonConvert.SerializeXmlNode(doc);
                 File.WriteAllText(directorio_json, json);
                 return true;
@@ -167,20 +171,20 @@ namespace cryptografia
             }
 
             File.WriteAllText(directorio, xmln);
-            
+
         }
 
         private ComprobanteEmisor empre()
         {
             ComprobanteEmisor empre = new ComprobanteEmisor();
-            empre.NRC = empres.Rows[0][2].ToString(); 
+            empre.Nrc = empres.Rows[0][2].ToString();
             empre.NombreEmpresa = empres.Rows[0][1].ToString();
             empre.RazonSocial = empres.Rows[0][3].ToString();
             empre.Denominacion = empres.Rows[0][4].ToString();
             empre.Giro = empres.Rows[0][5].ToString();
             empre.Direccion_Local = empres.Rows[0][6].ToString();
             empre.Nit = empres.Rows[0][7].ToString();
-            
+
 
             return empre;
         }
@@ -189,12 +193,12 @@ namespace cryptografia
         {
             ComprobanteReceptor cli = new ComprobanteReceptor();
             cli.Nombre_Cliente = cliente.Rows[0][2].ToString() + " " + cliente.Rows[0][3].ToString();
-            cli.NRC = cliente.Rows[0][7].ToString();
-            cli.Denominacion = cliente.Rows[0][1].ToString();
-            cli.Razon_Social = cliente.Rows[0][8].ToString();
-            cli.Giro = cliente.Rows[0][8].ToString();
+            cli.Nrc_Cliente = cliente.Rows[0][7].ToString();
+            cli.Denominacion_Cliente = cliente.Rows[0][1].ToString();
+            cli.Razon_Social_Cliente = cliente.Rows[0][8].ToString();
+            cli.Giro_Cliente = cliente.Rows[0][8].ToString();
             cli.Direccion = cliente.Rows[0][4].ToString();
-            cli.Nit = cliente.Rows[0][6].ToString();
+            cli.Nit_Cliente = cliente.Rows[0][6].ToString();
 
             return cli;
         }
@@ -202,11 +206,11 @@ namespace cryptografia
         private List<ComprobanteConcepto> item()
         {
             List<ComprobanteConcepto> ite = new List<ComprobanteConcepto>();
-            foreach(detalles_productos_venta_factura it in items)
+            foreach (detalles_productos_venta_factura it in items)
             {
                 ComprobanteConcepto con = new ComprobanteConcepto();
                 con.Cantidad = Convert.ToDecimal(it.Cantidad);
-                con.Descripcion = it.Nombre+" "+it.Presentacion;
+                con.Descripcion = it.Nombre + " " + it.Presentacion;
                 con.Precio_Unitario = Convert.ToDecimal(it.Precio_venta);
                 con.Monto_Total = Convert.ToDecimal(it.Total);
                 con.Descuento = Convert.ToDecimal(it.Descuento_iva);
@@ -243,6 +247,6 @@ namespace cryptografia
             return mayo;
         }
 
-        
+
     }
 }

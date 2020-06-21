@@ -495,12 +495,12 @@ namespace FirmarPDF
                             contenido_detalle.AddCell(new Cell().Add(new Paragraph(objetoComprobante.Conceptos[cont].Cantidad.ToString()).SetTextAlignment(TextAlignment.CENTER)).SetBorder(Border.NO_BORDER).
                                 SetBackgroundColor(iText.Kernel.Colors.PatternColor.ConvertCmykToRgb(new iText.Kernel.Colors.DeviceCmyk(0, 0, 0, 11)))).
                                 AddCell(new Cell().Add(new Paragraph(objetoComprobante.Conceptos[cont].Descripcion.ToString()).SetTextAlignment(TextAlignment.CENTER)).SetBorder(Border.NO_BORDER)).
-                                AddCell(new Cell().Add(new Paragraph(objetoComprobante.Conceptos[cont].Precio_Unitario.ToString()).SetTextAlignment(TextAlignment.CENTER)).SetBorder(Border.NO_BORDER).
+                                AddCell(new Cell().Add(new Paragraph("$"+objetoComprobante.Conceptos[cont].Precio_Unitario.ToString()).SetTextAlignment(TextAlignment.CENTER)).SetBorder(Border.NO_BORDER).
                                 SetBackgroundColor(iText.Kernel.Colors.PatternColor.ConvertCmykToRgb(new iText.Kernel.Colors.DeviceCmyk(0, 0, 0, 11)))).
-                                AddCell(new Cell().Add(new Paragraph(objetoComprobante.Conceptos[cont].Ventas_No_Sujetas.ToString()).SetTextAlignment(TextAlignment.CENTER)).SetBorder(Border.NO_BORDER)).
-                                AddCell(new Cell().Add(new Paragraph(objetoComprobante.Conceptos[cont].Ventas_Exentas.ToString()).SetTextAlignment(TextAlignment.CENTER)).SetBorder(Border.NO_BORDER).
+                                AddCell(new Cell().Add(new Paragraph("$"+objetoComprobante.Conceptos[cont].Ventas_No_Sujetas.ToString()).SetTextAlignment(TextAlignment.CENTER)).SetBorder(Border.NO_BORDER)).
+                                AddCell(new Cell().Add(new Paragraph("$"+objetoComprobante.Conceptos[cont].Ventas_Exentas.ToString()).SetTextAlignment(TextAlignment.CENTER)).SetBorder(Border.NO_BORDER).
                                 SetBackgroundColor(iText.Kernel.Colors.PatternColor.ConvertCmykToRgb(new iText.Kernel.Colors.DeviceCmyk(0, 0, 0, 11)))).
-                                AddCell(new Cell().Add(new Paragraph(objetoComprobante.Conceptos[cont].Monto_Total.ToString()).SetTextAlignment(TextAlignment.CENTER)).SetBorder(Border.NO_BORDER));
+                                AddCell(new Cell().Add(new Paragraph("$"+objetoComprobante.Conceptos[cont].Monto_Total.ToString()).SetTextAlignment(TextAlignment.CENTER)).SetBorder(Border.NO_BORDER));
 
                             /*}*/
 
@@ -612,7 +612,7 @@ namespace FirmarPDF
                     switch (indice)
                     {
                         case 0:
-                            MessageBox.Show("El archivo PDF fue firmado exitosamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            //MessageBox.Show("El archivo PDF fue firmado exitosamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             break;
                         case 1:
                             MessageBox.Show("El archivo selecionado no es un archivo PDF", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);

@@ -5,12 +5,13 @@
   <xsl:output method="text" version="1.0" encoding="UTF-8" indent="no"/>
   <!--
 		En esta sección se define la inclusión de las plantillas de utilerías para colapsar espacios
-	-->
+-->
   <xsl:include href="http://www.sat.gob.mx/sitio_internet/cfd/2/cadenaoriginal_2_0/utilerias.xslt"/>
-  <!-- 
+  <!--
 		En esta sección se define la inclusión de las demás plantillas de transformación para 
 		la generación de las cadenas originales de los complementos fiscales 
 	-->
+  
   <xsl:include href="http://www.sat.gob.mx/sitio_internet/cfd/EstadoDeCuentaCombustible/ecc11.xslt"/> 
   <xsl:include href="http://www.sat.gob.mx/sitio_internet/cfd/donat/donat11.xslt"/>
   <xsl:include href="http://www.sat.gob.mx/sitio_internet/cfd/divisas/divisas.xslt"/>

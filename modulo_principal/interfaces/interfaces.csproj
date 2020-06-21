@@ -134,6 +134,12 @@
       <DependentUpon>compras_de_productos.cs</DependentUpon>
     </Compile>
     <Compile Include="control_permisos\controlador_de_permisos.cs" />
+    <Compile Include="correo\envio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="correo\envio.Designer.cs">
+      <DependentUpon>envio.cs</DependentUpon>
+    </Compile>
     <Compile Include="farmacia\Control de medicina.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -622,6 +628,9 @@
     <EmbeddedResource Include="compras\compras_de_productos.resx">
       <DependentUpon>compras_de_productos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="correo\envio.resx">
+      <DependentUpon>envio.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="farmacia\Control de medicina.resx">
       <DependentUpon>Control de medicina.cs</DependentUpon>
     </EmbeddedResource>
@@ -868,6 +877,10 @@
     <ProjectReference Include="..\espera_datos\espera_datos.csproj">
       <Project>{0822e6f8-74d5-4526-be21-afdd3dbc6154}</Project>
       <Name>espera_datos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FirmarPDF\FirmarPDF.csproj">
+      <Project>{08df8707-3f2a-4ab8-8cd9-68d5ca7f0db3}</Project>
+      <Name>FirmarPDF</Name>
     </ProjectReference>
     <ProjectReference Include="..\gadgets\gadgets.csproj">
       <Project>{49ab546f-3431-482b-a8d0-c96639346bc4}</Project>
@@ -1206,6 +1219,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\visa1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\email %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
