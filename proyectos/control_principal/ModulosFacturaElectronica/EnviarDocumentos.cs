@@ -79,17 +79,20 @@ namespace control_principal.ModulosFacturaElectronica
                 }  
             }
         }
-
+        DataTable empresa = conexiones_BD.clases.empresa.datos_empresa();
         private string BuscarRutaDocumento(bool tipo_archivo)
         {
             //Crear cuadro de seleccionar archivo
             OpenFileDialog Carpeta = new OpenFileDialog();
+            
             if (tipo_archivo)
             {
+                Carpeta.InitialDirectory = empresa.Rows[0][10].ToString();
                 Carpeta.Filter = "Archivos XML (*.xml)|*.xml";
             }
             else
             {
+                Carpeta.InitialDirectory = empresa.Rows[0][11].ToString();
                 Carpeta.Filter = "Archivos PDF (*.pdf)|*.pdf";
             }
             

@@ -72,6 +72,8 @@ namespace control_principal.ModulosFacturaElectronica
         {
             //Crear cuadro de seleccionar archivo
             OpenFileDialog Carpeta = new OpenFileDialog();
+            Carpeta.DefaultExt = "xml";
+            Carpeta.Filter = "Text files (*.xml)|*.xml";
 
             //verifica si un archivo ha sido selecionado
             if (Carpeta.ShowDialog() == DialogResult.OK)
@@ -86,10 +88,12 @@ namespace control_principal.ModulosFacturaElectronica
 
         }
 
+        DataTable empresa = conexiones_BD.clases.empresa.datos_empresa();
         private string RutaSelecionadaParaJSON()
         {
             //Crear cuadro de seleccionar archivo
             FolderBrowserDialog Carpeta = new FolderBrowserDialog();
+            Carpeta.SelectedPath = empresa.Rows[0][10].ToString();
 
             //verifica si un archivo ha sido selecionado
             if (Carpeta.ShowDialog() == DialogResult.OK)

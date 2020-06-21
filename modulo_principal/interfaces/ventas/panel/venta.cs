@@ -1205,7 +1205,7 @@ namespace interfaces.ventas.panel
                 {
                     case 0:
                         {
-                            guarda_xml.InitialDirectory = @"C:\";
+                            guarda_xml.InitialDirectory = empresa.Rows[0][10].ToString();
                             guarda_xml.Title = "Guardar archivo factura electronica";
                             guarda_xml.DefaultExt = "xml";
                             guarda_xml.Filter = "Text files (*.xml)|*.xml|All files (*.*)|*.*";
@@ -1217,6 +1217,7 @@ namespace interfaces.ventas.panel
 
                                 if (creando_xml_json(true, fact))
                                 {
+                                    //Revisar la regneracion de la factura
                                     MessageBox.Show("La factura se regenero en formato xml con exíto", "Factura generada", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                     limpiarTodo();
                                 }
@@ -1230,7 +1231,7 @@ namespace interfaces.ventas.panel
 
                     case 1:
                         {
-                            guarda_xml.InitialDirectory = @"C:\";
+                            guarda_xml.InitialDirectory = empresa.Rows[0][10].ToString();
                             guarda_xml.Title = "Guardar archivo json";
                             guarda_xml.DefaultExt = "json";
                             guarda_xml.Filter = "Text files (*.json)|*.json|All files (*.*)|*.*";
@@ -1246,6 +1247,7 @@ namespace interfaces.ventas.panel
                                     if (fact.creando_json(ruta, guarda_xml.FileName))
                                     {
                                         MessageBox.Show("La factura se genero en formato json con exíto", "Json generado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                        File.Delete(ruta);
                                         limpiarTodo();
                                     }else
                                     {
@@ -2450,20 +2452,79 @@ namespace interfaces.ventas.panel
                     if (tipo_factura != listaTipoFactura.SelectedIndex)
                     {
                         
-                                    if (MessageBox.Show("Al cambiar el tipo de factura se borran los articulos de la grilla. ¿Desea cambiar el tipo de factura?", "Cambio de factura", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                                    {
-                                        tabla_articulos.Rows.Clear();
-                                        lblIva.Text = "0.00";
-                                        calcularTotales();
-                                    }
-                                    else
-                                    {
-                                        listaTipoFactura.SelectedIndex = tipo_factura;
-                                    }
+                        if (MessageBox.Show("Al cambiar el tipo de factura se recalculara los montos ¿Desea cambiar el tipo de factura?", "Cambio de factura", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        {
+                            recalculando_totales(listaTipoFactura.SelectedIndex);
+                        }
+                        else
+                        {
+                            listaTipoFactura.SelectedIndex = tipo_factura;
+                        }
                         
                     }
                 }
                 activacionCampoDocumento();      
+            }
+        }
+
+        private void recalculando_totales(int tipodocu)
+        {
+            switch (tipodocu)
+            {
+                case 2:
+                    {
+                        int cantidad = 0;
+                        double precio = 0.0;
+                        double precio_sin_iva = 0.0;
+                        double desc_iva = 0.0;
+
+                        foreach (DataGridViewRow fila in tabla_articulos.Rows)
+                        {
+                            cantidad = Convert.ToInt32(fila.Cells[4].Value.ToString());
+                            precio = Convert.ToDouble(fila.Cells[5].Value.ToString());
+                            precio_sin_iva = Math.Round((precio / 1.13), 2);
+                            desc_iva = Math.Round(((precio / 1.13) * 0.13), 2);
+                            fila.Cells[6].Value = Math.Round((precio_sin_iva * cantidad), 2);
+                            fila.Cells[15].Value = Math.Round((desc_iva * cantidad), 2);
+                        }
+
+                        calcularTotales();
+                        break;
+                    }
+                case 5:
+                    {
+                        int cantidad = 0;
+                        double precio = 0.0;
+                        double precio_sin_iva = 0.0;
+                        double desc_iva = 0.0;
+
+                        foreach (DataGridViewRow fila in tabla_articulos.Rows)
+                        {
+                            cantidad = Convert.ToInt32(fila.Cells[4].Value.ToString());
+                            precio = Convert.ToDouble(fila.Cells[5].Value.ToString());
+                            precio_sin_iva = Math.Round((precio / 1.13), 2);
+                            desc_iva = Math.Round(((precio / 1.13) * 0.13), 2);
+                            fila.Cells[6].Value = Math.Round((precio_sin_iva * cantidad), 2);
+                            fila.Cells[15].Value = Math.Round((desc_iva * cantidad), 2);
+                        }
+                        calcularTotales();
+                        break;
+                    }
+                default:
+                    {
+                        int cantidad = 0;
+                        double precio = 0.0;
+                        foreach (DataGridViewRow fila in tabla_articulos.Rows)
+                        {
+                            cantidad = Convert.ToInt32(fila.Cells[4].Value.ToString());
+                            precio = Convert.ToDouble(fila.Cells[5].Value.ToString());
+                            fila.Cells[6].Value = (precio * cantidad).ToString();
+                            fila.Cells[15].Value = 0;
+                        }
+
+                        calcularTotales();
+                        break;
+                    }
             }
         }
 

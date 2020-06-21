@@ -69,6 +69,8 @@ namespace control_principal.ModulosFacturaElectronica
             //Crear cuadro de seleccionar archivo
             OpenFileDialog Carpeta = new OpenFileDialog();
             Carpeta.InitialDirectory=empresa.Rows[0][10].ToString();
+            Carpeta.DefaultExt = "xml";
+            Carpeta.Filter = "Text files (*.xml)|*.xml";
 
             //verifica si un archivo ha sido selecionado
             if (Carpeta.ShowDialog() == DialogResult.OK)

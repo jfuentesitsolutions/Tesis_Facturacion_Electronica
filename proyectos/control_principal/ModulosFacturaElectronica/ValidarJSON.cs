@@ -63,12 +63,15 @@ namespace control_principal.ModulosFacturaElectronica
             CargarDatosFormularios();
         }
 
+        DataTable empresa = conexiones_BD.clases.empresa.datos_empresa();
 
         private string BuscarRutaDocumento()
         {
             //Crear cuadro de seleccionar archivo
             OpenFileDialog Carpeta = new OpenFileDialog();
-
+            Carpeta.InitialDirectory = empresa.Rows[0][10].ToString();
+            Carpeta.DefaultExt = "json";
+            Carpeta.Filter = "Text files (*.json)|*.json";
             //verifica si un archivo ha sido selecionado
             if (Carpeta.ShowDialog() == DialogResult.OK)
             {
