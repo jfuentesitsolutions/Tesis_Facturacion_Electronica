@@ -2439,7 +2439,6 @@ namespace interfaces.ventas.panel
             {
                 idcorre = correlativos.Rows[0][0].ToString();
             }
-
             return idcorre;
         }
 
@@ -2450,8 +2449,7 @@ namespace interfaces.ventas.panel
                 if (tabla_articulos.Rows.Count != 0)
                 {
                     if (tipo_factura != listaTipoFactura.SelectedIndex)
-                    {
-                        
+                    { 
                         if (MessageBox.Show("Al cambiar el tipo de factura se recalculara los montos ¿Desea cambiar el tipo de factura?", "Cambio de factura", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                         {
                             recalculando_totales(listaTipoFactura.SelectedIndex);
@@ -2459,8 +2457,7 @@ namespace interfaces.ventas.panel
                         else
                         {
                             listaTipoFactura.SelectedIndex = tipo_factura;
-                        }
-                        
+                        }    
                     }
                 }
                 activacionCampoDocumento();      

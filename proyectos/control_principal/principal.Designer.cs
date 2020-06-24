@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(principal));
             this.panelLateral = new System.Windows.Forms.Panel();
-            this.btnrepo = new System.Windows.Forms.Button();
             this.btncon = new System.Windows.Forms.Button();
             this.btnVentas = new System.Windows.Forms.Button();
             this.btnInventario = new System.Windows.Forms.Button();
@@ -44,6 +43,7 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.cerrar = new System.Windows.Forms.PictureBox();
             this.panel_contenidos = new System.Windows.Forms.Panel();
+            this.btnrepo = new System.Windows.Forms.Button();
             this.panelLateral.SuspendLayout();
             this.logo.SuspendLayout();
             this.panelSuperior.SuspendLayout();
@@ -66,26 +66,6 @@
             this.panelLateral.Name = "panelLateral";
             this.panelLateral.Size = new System.Drawing.Size(175, 462);
             this.panelLateral.TabIndex = 0;
-            // 
-            // btnrepo
-            // 
-            this.btnrepo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(149)))), ((int)(((byte)(163)))));
-            this.btnrepo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnrepo.FlatAppearance.BorderSize = 0;
-            this.btnrepo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(122)))), ((int)(((byte)(130)))));
-            this.btnrepo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnrepo.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnrepo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnrepo.Image = ((System.Drawing.Image)(resources.GetObject("btnrepo.Image")));
-            this.btnrepo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnrepo.Location = new System.Drawing.Point(0, 251);
-            this.btnrepo.Name = "btnrepo";
-            this.btnrepo.Size = new System.Drawing.Size(175, 62);
-            this.btnrepo.TabIndex = 5;
-            this.btnrepo.Text = "           Verificar\r\n            factura";
-            this.btnrepo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnrepo.UseVisualStyleBackColor = false;
-            this.btnrepo.Click += new System.EventHandler(this.btnrepo_Click);
             // 
             // btncon
             // 
@@ -271,6 +251,27 @@
             this.panel_contenidos.Size = new System.Drawing.Size(932, 397);
             this.panel_contenidos.TabIndex = 2;
             // 
+            // btnrepo
+            // 
+            this.btnrepo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(149)))), ((int)(((byte)(163)))));
+            this.btnrepo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnrepo.FlatAppearance.BorderSize = 0;
+            this.btnrepo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(122)))), ((int)(((byte)(130)))));
+            this.btnrepo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnrepo.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnrepo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnrepo.Image = ((System.Drawing.Image)(resources.GetObject("btnrepo.Image")));
+            this.btnrepo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnrepo.Location = new System.Drawing.Point(0, 251);
+            this.btnrepo.Name = "btnrepo";
+            this.btnrepo.Size = new System.Drawing.Size(175, 62);
+            this.btnrepo.TabIndex = 5;
+            this.btnrepo.Text = "           Verificar\r\n            factura";
+            this.btnrepo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnrepo.UseVisualStyleBackColor = false;
+            this.btnrepo.Visible = false;
+            this.btnrepo.Click += new System.EventHandler(this.btnrepo_Click);
+            // 
             // principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -316,9 +317,9 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Panel panel_contenidos;
         private System.Windows.Forms.Button btnVentas;
-        private System.Windows.Forms.Button btnrepo;
         private System.Windows.Forms.Button btncon;
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.PictureBox btnCerrarsesion;
+        private System.Windows.Forms.Button btnrepo;
     }
 }
